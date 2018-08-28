@@ -1,8 +1,16 @@
 package com.neona.numbiosis.metodos;
 
+import com.jjoe64.graphview.series.DataPoint;
+
 import org.mariuszgromada.math.mxparser.*;
 
 public class Raiz {
+
+    private static DataPoint[] dpsX;
+    private static DataPoint[][] secantes;
+    private static double menorX;
+    private static double maiorX;
+    private static int nIteracoes;
 
     public static final double TOL = 1e-5;
     public static final double EPSILON = Float.MIN_NORMAL;
@@ -111,6 +119,14 @@ public class Raiz {
         Argument arg_x = new Argument("x");
         Expression _f = new Expression(funcao, arg_x);
 
+        // inicializar maior e menor
+        menorX = x0 < x1 ? x0 : x1;
+        maiorX = x0 > x1 ? x0 : x1;
+
+        // inicializo Arrays
+        dpsX = new DataPoint[n];
+        secantes = new DataPoint[n][2];
+
         for (int i = 0; i < n; i++) {
 
             arg_x.setArgumentValue(a);
@@ -119,9 +135,21 @@ public class Raiz {
             arg_x.setArgumentValue(b);
             fb = _f.calculate();
 
-            xk = (a*fb - b*fa) / (fb - fa);
+            xk = (a*fb - b*fa) / (fb - fa + EPSILON);
 
             erro = erro(b, xk, true);
+
+            // atualizo maior e menor
+            if(xk > maiorX) maiorX = xk;
+            if(xk < menorX) menorX = xk;
+
+            // adiciono datapoints aos arrays
+            dpsX[i] = new DataPoint(xk,0);
+            secantes[i][0] = new DataPoint(a,fa);
+            secantes[i][1] = new DataPoint(b,fb);
+
+            // salvo a qtd de xk achados
+            nIteracoes  = i + 1;
 
             if (erro < tol) {
                 return xk;
@@ -149,4 +177,9 @@ public class Raiz {
 
     }
 
+    public static double getMenorX(){ return menorX; }
+    public static double getMaiorX(){ return maiorX; }
+    public static DataPoint[] getDataPointsX() { return dpsX; }
+    public static DataPoint[][] getSecantes() { return secantes; }
+    public static int getNumeroIteracoes(){ return nIteracoes; }
 }
