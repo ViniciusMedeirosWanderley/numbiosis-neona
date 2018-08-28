@@ -16,6 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".TelaInicial"
+            android:label="@string/telaInicial" />
+
+        <activity
+            android:name=".Muller"
+            android:label="@string/muller" />
+
+        <activity
+            android:name=".FalsaPosição"
+            android:label="@string/falsa_posicao" />
+
+        <activity
+            android:name=".Secante"
+            android:label="@string/secante" />
+
     </application>
 
 </manifest>
