@@ -44,6 +44,8 @@ public class GraphHandler {
         getSeriesRaiz().setShape(PointsGraphSeries.Shape.POINT);
         getSeriesRaiz().setColor(Color.RED);
         getSeriesRaiz().setSize(15f);
+
+        graph.setTitle("Raiz aproximada: "+raiz);
     }
 
     public void initGraph(){
@@ -65,7 +67,6 @@ public class GraphHandler {
         double maiorX = Raiz.getMaiorX() + 1;
 
         getGraph().getViewport().setMinimalViewport(menorX, maiorX,0,0);
-
     }
 
     private LineGraphSeries<DataPoint> criaSerieFuncao(double menorX, double maiorX, String funcao){
