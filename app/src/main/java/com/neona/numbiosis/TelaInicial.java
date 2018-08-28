@@ -32,11 +32,11 @@ public class TelaInicial extends AppCompatActivity implements  View.OnClickListe
                 startActivity(it);
                 break;
             case R.id.btn_falsa_posição:
-                Intent it2 = new Intent(this, Muller.class);
+                Intent it2 = new Intent(this, FalsaPosição.class);
                 startActivity(it2);
                 break;
             case R.id.btn_secante:
-                Intent it3 = new Intent(this, Muller.class);
+                Intent it3 = new Intent(this, Secante.class);
                 startActivity(it3);
                 break;
 
