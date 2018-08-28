@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">Numbiosis</string>
     <string name="muller">Muller</string>
-    <string name="falsa_posicao">FalsaPosição</string>
+    <string name="falsa_posicao">Falsa Posição</string>
     <string name="secante">Secante</string>
-    <string name="telaInicial">TelaInicial</string>
+    <string name="telaInicial">Tela Inicial</string>
+    <string name="textView_função_muller">Função Muller</string>
+    <string name="textView_x0_muller">x0</string>
+    <string name="textView_x1_muller">x1</string>
+    <string name="editText_x0_muller">x0</string>
+    <string name="editText_x1_muller">x1</string>
+    <string name="textView_x2_muller">x2</string>
+    <string name="editText_x2_muller">x2</string>
+    <string name="editText_função_muller">Função Muller</string>
+    <string name="textView_tol_muller">Tol</string>
+    <string name="editText_tol_muller">Tol</string>
+    <string name="textView_n_muller">n</string>
+    <string name="editText_n_muller">n</string>
 
 </resources>

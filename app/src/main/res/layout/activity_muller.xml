@@ -1,52 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph1"
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:layout_marginBottom="52dp"
-        android:layout_marginTop="122dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="320dp"
+        android:layout_height="144dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/barrier3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_calcular" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_calcular"
-        android:layout_width="149dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="374dp"
-        android:layout_marginEnd="117dp"
-        android:layout_marginLeft="118dp"
-        android:layout_marginRight="117dp"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="35dp"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginStart="39dp"
         android:text="Calcular muller"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/graph1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_muller" />
+        app:layout_constraintStart_toEndOf="@+id/guideline" />
 
     <EditText
-        android:id="@+id/texto_muller"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
-        android:layout_marginLeft="85dp"
-        android:layout_marginRight="84dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="57dp"
+        android:id="@+id/editText_função_muller"
+        android:layout_width="199dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Teste"
+        android:text="@string/editText_função_muller"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textView_função_muller" />
+
+    <TextView
+        android:id="@+id/textView_função_muller"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/textView_função_muller"
+        android:textSize="@dimen/função_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/textView_x0_muller"
+        android:layout_width="57dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/textView_x0_muller"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/editText_função_muller" />
+
+    <EditText
+        android:id="@+id/editText_x0_muller"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editText_x0_muller"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textView_x0_muller" />
+
+    <TextView
+        android:id="@+id/textView_x1_muller"
+        android:layout_width="57dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/textView_x1_muller"
+        app:layout_constraintEnd_toStartOf="@+id/textView_x2_muller"
+        app:layout_constraintStart_toEndOf="@+id/textView_x0_muller"
+        app:layout_constraintTop_toBottomOf="@+id/editText_função_muller" />
+
+    <EditText
+        android:id="@+id/editText_x1_muller"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editText_x1_muller"
+        app:layout_constraintEnd_toStartOf="@+id/editText_x2_muller"
+        app:layout_constraintStart_toEndOf="@+id/editText_x0_muller"
+        app:layout_constraintTop_toBottomOf="@+id/textView_x1_muller" />
+
+    <TextView
+        android:id="@+id/textView_x2_muller"
+        android:layout_width="57dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/textView_x2_muller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_função_muller" />
+
+    <EditText
+        android:id="@+id/editText_x2_muller"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editText_x2_muller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_x2_muller" />
+
+    <TextView
+        android:id="@+id/textView_tol_muller"
+        android:layout_width="90dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:text="@string/textView_tol_muller"
+        app:layout_constraintBottom_toTopOf="@+id/editText_tol_muller"
+        app:layout_constraintStart_toEndOf="@+id/guideline" />
+
+    <EditText
+        android:id="@+id/editText_tol_muller"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editText_tol_muller"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calcular"
+        app:layout_constraintStart_toEndOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/textView_n_muller"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:text="@string/textView_n_muller"
+        app:layout_constraintBottom_toTopOf="@+id/editText_n_muller"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_n_muller"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editText_n_muller"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calcular"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
 
 </android.support.constraint.ConstraintLayout>

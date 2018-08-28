@@ -12,18 +12,23 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class Muller extends AppCompatActivity implements View.OnClickListener{
-    EditText text_user;
-    String teste;
+    EditText função , x0,x1,x2,tol,n;
+    String funçãoS,x0S,x1S,x2S,tolS,nS;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_muller);
+        setContentView(R.layout.activity_muller);//tela que estamos usando
 
-        Button btnCalcularMuller = (Button) findViewById(R.id.btn_calcular);
-        btnCalcularMuller.setOnClickListener((View.OnClickListener ) this);
+        Button btnCalcularMuller = (Button) findViewById(R.id.btn_calcular);//instanciamos o botão da tela
+        btnCalcularMuller.setOnClickListener((View.OnClickListener ) this); //colocamos ele pra ser "escutado"
 
-        text_user = (EditText) findViewById(R.id.texto_muller);
+        função = (EditText) findViewById(R.id.editText_função_muller); //instanciamos as caixas de texto da tela
+        x0 = (EditText) findViewById(R.id.editText_x0_muller);
+        x1 = (EditText) findViewById(R.id.editText_x1_muller);
+        x2 = (EditText) findViewById(R.id.editText_x2_muller);
+        tol = (EditText) findViewById(R.id.editText_tol_muller);
+        n = (EditText) findViewById(R.id.editText_n_muller);
 
-        GraphView graph = (GraphView) findViewById(R.id.graph1);
+        GraphView graph = (GraphView) findViewById(R.id.graph1); // instanciamos o gráfico
 
         DataPoint[] data = new DataPoint[200];
         double x = -10,y=0;
@@ -42,12 +47,10 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
 
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.btn_calcular:
-                //MapsActivity.userinfo = text_user.getText().toString(); // ALTERA A VAR DA OUTRA CLASSE C/ AS INFO DIGITADAS
-                //Intent inter = new Intent(this, MapsActivity.class);
-                //startActivity(inter);
-                teste = text_user.getText().toString();
-                System.out.println(teste);
+            case R.id.btn_calcular://caso o click seja no botão calcular
+
+                funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
+                System.out.println(funçãoS);//printamos o calor capturado no console
         }
 
     }
