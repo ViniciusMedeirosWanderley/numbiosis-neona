@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     String f = "x^3 - 6*x^2 -x + 30";
     double raiz;
-    double  a = -1.5,
-            b = 0.5,
-            c = 1;
+    double  a = -3,
+            b = 0,
+            c = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +40,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
 
-        raiz = Raiz.secante(f,a,b,Raiz.TOL,Raiz.N);
+        /**
+         * ----------------------------------------------------
+         * Plotando o grafico:
+         *      1: Chamo um dos metodos na classe Raiz e encontro a raiz da funcao
+         *      2: Chamo os metodos da classe GraphHandler na ordem abaixo
+         *----------------------------------------------------
+         * */
+
+        //raiz = Raiz.secante(f,a,b,Raiz.TOL,Raiz.N);
+        //raiz = Raiz.falsaPosicao(f,a,b,Raiz.TOL,Raiz.N);
+        raiz = Raiz.muller(f,a,b,c,Raiz.TOL,Raiz.N);
 
         GraphHandler handler = new GraphHandler(f, graph);
         handler.initSerieFuncao();
         handler.initSerieRaizes();
         handler.initSerieRaizFinal(raiz);
         handler.initGraph();
+        //----------------------------------------------------
 
 
+        // USADO SO PARA PRINTAR NO Logcat/Terminal E ACOMPANHAR OS VALORES
         String resumo = "Raiz: "+raiz+"  MenorX: "+Raiz.getMenorX()+"  MaiorX: "+Raiz.getMaiorX();
         Log.d("resumo",resumo);
         Log.d("resumo","Iteracoes: "+Raiz.getNumeroIteracoes());

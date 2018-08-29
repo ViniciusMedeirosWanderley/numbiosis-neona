@@ -45,7 +45,7 @@ public class GraphHandler {
         getSeriesRaiz().setColor(Color.RED);
         getSeriesRaiz().setSize(15f);
 
-        graph.setTitle("Raiz aproximada: "+raiz);
+        graph.setTitle("Raiz encontrada: "+raiz);
     }
 
     public void initGraph(){
@@ -57,9 +57,12 @@ public class GraphHandler {
         if(getSeriesRaiz() != null)
             getGraph().addSeries(getSeriesRaiz());
 
+        // permite apenas scroll
+        //getGraph().getViewport().setScrollable(true);
+        //getGraph().getViewport().setScrollableY(true);
+
+        // permite zoom e scroll
         getGraph().getViewport().setScalable(true);
-        getGraph().getViewport().setScrollable(true);
-        getGraph().getViewport().setScrollableY(true);
         getGraph().getViewport().setScalableY(true);
 
         // impoe limites
@@ -67,6 +70,10 @@ public class GraphHandler {
         double maiorX = Raiz.getMaiorX() + 1;
 
         getGraph().getViewport().setMinimalViewport(menorX, maiorX,0,0);
+
+        //getGraph().getViewport().setXAxisBoundsManual(true);
+        //getGraph().getViewport().setYAxisBoundsManual(true);
+
     }
 
     private LineGraphSeries<DataPoint> criaSerieFuncao(double menorX, double maiorX, String funcao){
@@ -78,6 +85,10 @@ public class GraphHandler {
         double x = inf;
         double y;
         qtd_pontos++;
+
+        // impondo um limite a qtd de pontos para calcular
+        if(qtd_pontos > 501) qtd_pontos = 501;
+
         DataPoint[] dataPoints = new DataPoint[qtd_pontos];
 
         for(int i = 0; i < qtd_pontos; i++){
