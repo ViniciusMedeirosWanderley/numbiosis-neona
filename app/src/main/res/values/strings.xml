@@ -16,5 +16,17 @@
     <string name="editText_tol_muller">Tol</string>
     <string name="textView_n_muller">n</string>
     <string name="editText_n_muller">n</string>
+    <string name="textView_função_secante">Função</string>
+    <string name="editText_função_secante">Função</string>
+    <string name="textView_x0_secante">x0</string>
+    <string name="textView_x1_secante">x1</string>
+    <string name="editText_x0_secante">x0</string>
+    <string name="editText_x1_secante">x1</string>
+    <string name="textView_tol_secante">tol</string>
+    <string name="textView_n_secante">n</string>
+    <string name="editText_tol_secante">tol</string>
+    <string name="editText_n_secante">n</string>
+    <string name="btn_calcular_secante">Calcular</string>
+    <string name="btn_calcular_muller">Calcular</string>
 
 </resources>

@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_calcular"
+        android:id="@+id/btn_calcular_muller"
         android:layout_width="200dp"
         android:layout_height="48dp"
         android:layout_marginBottom="12dp"
@@ -24,7 +24,7 @@
         android:layout_marginLeft="39dp"
         android:layout_marginRight="60dp"
         android:layout_marginStart="39dp"
-        android:text="Calcular muller"
+        android:text="@string/btn_calcular_muller"
         app:layout_constraintBottom_toTopOf="@+id/graph1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline" />
@@ -159,7 +159,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/editText_tol_muller"
-        app:layout_constraintBottom_toTopOf="@+id/btn_calcular"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calcular_muller"
         app:layout_constraintStart_toEndOf="@+id/guideline" />
 
     <TextView
@@ -183,7 +183,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/editText_n_muller"
-        app:layout_constraintBottom_toTopOf="@+id/btn_calcular"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calcular_muller"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <android.support.constraint.Guideline
