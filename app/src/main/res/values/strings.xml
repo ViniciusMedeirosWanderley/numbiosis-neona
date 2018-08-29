@@ -28,5 +28,18 @@
     <string name="editText_n_secante">n</string>
     <string name="btn_calcular_secante">Calcular</string>
     <string name="btn_calcular_muller">Calcular</string>
+    <string name="editext_false_N">N</string>
+    <string name="btn_calcular_falsa" >Calcular</string>
+    <string name="String_false_Função">Função</string>
+    <string name="editText_false_Função">Função</string>
+    <string name="String_false_A">A</string>
+    <string name="String_false_B">B</string>
+    <string name="edittext_false_A">a</string>
+    <string name="editText_false_b">b</string>
+    <string name="String_false_Tol">Tol</string>
+    <string name="String_false_X">X</string>
+    <string name="editText_false_Tol">Tol</string>
+    <string name="editText_false_X">X</string>
+    <string name="String_false_N">N</string>
 
 </resources>
