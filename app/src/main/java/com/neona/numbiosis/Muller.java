@@ -38,6 +38,8 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
 
                 GraphView graph1 = (GraphView) findViewById(R.id.graph1); // instanciamos o gráfico
 
+                graph1.removeAllSeries(); //limpa o gráfico contendo funções já plotadas.
+
                 funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
                 x0S = x0.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
                 x1S = x1.getText().toString();   //capturamos o que foi digitado na caixa de texto da função

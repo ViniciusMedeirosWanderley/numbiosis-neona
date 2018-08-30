@@ -36,6 +36,7 @@ public class Secante extends AppCompatActivity implements  View.OnClickListener 
             case R.id.btn_calcular_secante://caso o click seja no botão calcular
 
                 GraphView graph2 = (GraphView) findViewById(R.id.graph2); // instanciamos o gráfico
+                graph2.removeAllSeries(); //limpa o gráfico contendo funções já plotadas.
 
                 funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
                 x0S = x0.getText().toString();   //capturamos o que foi digitado na caixa de texto da função

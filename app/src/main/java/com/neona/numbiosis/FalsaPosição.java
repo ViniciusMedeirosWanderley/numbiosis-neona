@@ -39,6 +39,8 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
                 System.out.println(funçãoS);//printamos o calor capturado no console
                 GraphView graph = (GraphView) findViewById(R.id.graph3); // instanciamos o gráfico
 
+                graph.removeAllSeries(); //limpa o gráfico contendo funções já plotadas.
+
                 DataPoint[] data = new DataPoint[200];
                 double x = -10,y=0;
                 for(int i =0; i < 200; i++){
