@@ -1,4 +1,4 @@
-package com.neona.numbiosis.metodos;
+package com.neona.numbiosis;
 
 import com.jjoe64.graphview.series.DataPoint;
 

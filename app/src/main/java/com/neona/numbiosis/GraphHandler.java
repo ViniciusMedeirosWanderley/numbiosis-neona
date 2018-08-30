@@ -1,4 +1,4 @@
-package com.neona.numbiosis.util;
+package com.neona.numbiosis;
 
 import android.graphics.Color;
 
@@ -6,7 +6,7 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.PointsGraphSeries;
-import com.neona.numbiosis.metodos.Raiz;
+import com.neona.numbiosis.Raiz;
 
 import org.mariuszgromada.math.mxparser.Argument;
 import org.mariuszgromada.math.mxparser.Expression;
