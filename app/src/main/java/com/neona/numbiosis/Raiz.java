@@ -52,16 +52,21 @@ public class Raiz {
             arg_x.setArgumentValue(x2);
             fx2 = _f.calculate();
 
-            d0 = (fx1 - fx0) / (x1 - x0 + EPSILON);
-            d1 = (fx2 - fx1) / (x2 - x1 + EPSILON);
+            d0 = (fx1 - fx0) / (x1 - x0);
+            d1 = (fx2 - fx1) / (x2 - x1);
 
-            a = (d1 - d0) / (h1 + h0 + EPSILON);
+            a = (d1 - d0) / (h1 + h0);
             b = a*h1 + d1;
             c = fx2;
 
             disc = Math.sqrt(b*b - 4*a*c);
 
-            x3 = x2 + (-2*c) / (b + Math.signum(b)*disc + EPSILON);
+            x3 = x2 + (-2*c) / (b + Math.signum(b)*disc);
+
+            // Erro matematico, parar a execucao e tratar o erro
+            if(Double.isNaN(x3) || Double.isInfinite(x3)){
+                throw new ArithmeticException();
+            }
 
             // USADO PARA PLOTAGEM ----------------
             // atualizo maior e menor
@@ -80,24 +85,17 @@ public class Raiz {
             if(erro < tol)
                 return x3;
 
-
             // prepara para prox iteracao
             x0 = x1;
             x1 = x2;
             x2 = x3;
-
-            // Erro matematico, parar a execucao e tratar o erro
-            if(Double.isNaN(x3)){
-                throw new ArithmeticException();
-            }
-
         }
 
         return x3;
     }
 
 
-    public static double falsaPosicao(String funcao, double a, double b, double tol, int n){
+    public static double falsaPosicao(String funcao, double a, double b, double tol, int n) throws ArithmeticException{
         double  x = b, xm = 0,
                 fa, fb, fxm,
                 erro;
@@ -123,11 +121,16 @@ public class Raiz {
             arg_x.setArgumentValue(xm);
             fxm = _f.calculate();
 
-            xm = (a*fb - b*fa) / (fb - fa + EPSILON);
+            xm = (a*fb - b*fa) / (fb - fa);
 
             erro = erro(x, xm, true);
 
             x = xm;
+
+            // Erro matematico, parar a execucao e tratar o erro
+            if(Double.isNaN(x) || Double.isInfinite(x)){
+                throw new ArithmeticException();
+            }
 
             // USADO PARA PLOTAGEM ----------------
             // atualizo maior e menor
@@ -160,7 +163,7 @@ public class Raiz {
     }
 
 
-    public static double secante(String funcao, double x0, double x1, double tol, int n) {
+    public static double secante(String funcao, double x0, double x1, double tol, int n) throws ArithmeticException{
         double xk = 0,
                 fa, fb,
                 a = x0,
@@ -186,9 +189,14 @@ public class Raiz {
             arg_x.setArgumentValue(b);
             fb = _f.calculate();
 
-            xk = (a*fb - b*fa) / (fb - fa + EPSILON);
+            xk = (a*fb - b*fa) / (fb - fa);
 
             erro = erro(b, xk, true);
+
+            // Erro matematico, parar a execucao e tratar o erro
+            if(Double.isNaN(xk) || Double.isInfinite(xk)){
+                throw new ArithmeticException();
+            }
 
             // USADO PARA PLOTAGEM ----------------
             // atualizo maior e menor
