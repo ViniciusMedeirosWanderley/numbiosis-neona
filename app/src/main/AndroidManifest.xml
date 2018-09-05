@@ -9,29 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".TelaInicial"
+            android:label="@string/telaInicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".TelaInicial"
-            android:label="@string/telaInicial" />
-
         <activity
             android:name=".Muller"
-            android:label="@string/muller" />
-
+            android:label="@string/titulo_muller" />
         <activity
             android:name=".FalsaPosição"
-            android:label="@string/falsa_posicao" />
-
+            android:label="@string/titulo_falsaPosicao" />
         <activity
             android:name=".Secante"
-            android:label="@string/secante" />
+            android:label="@string/titulo_secante" />
+        <activity android:name=".PlotagemActivity" />
 
     </application>
 

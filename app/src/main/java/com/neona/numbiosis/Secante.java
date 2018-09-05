@@ -37,10 +37,10 @@ public class Secante extends AppCompatActivity implements  View.OnClickListener 
 
                 GraphView graph2 = (GraphView) findViewById(R.id.graph2); // instanciamos o gráfico
 
-                funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
-                x0S = x0.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
-                x1S = x1.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
-                tolS = tol.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
+                funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
+                x0S = x0.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
+                x1S = x1.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
+                tolS = tol.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 nS = n.getText().toString();
 
                 double x0, x1, tol;

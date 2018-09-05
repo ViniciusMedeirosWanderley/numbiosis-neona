@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         // USADO SO PARA PRINTAR NO Logcat/Terminal E ACOMPANHAR OS VALORES
-        String resumo = "Raiz: "+raiz+"  MenorX: "+Raiz.getMenorX()+"  MaiorX: "+Raiz.getMaiorX();
-        Log.d("resumo",resumo);
-        Log.d("resumo","Iteracoes: "+Raiz.getNumeroIteracoes());
+        //String resumo = "Raiz: "+raiz+"  MenorX: "+Raiz.getMenorX()+"  MaiorX: "+Raiz.getMaiorX();
+        //Log.d("resumo",resumo);
+        //Log.d("resumo","Iteracoes: "+Raiz.getNumeroIteracoes());
     }
 
     @Override

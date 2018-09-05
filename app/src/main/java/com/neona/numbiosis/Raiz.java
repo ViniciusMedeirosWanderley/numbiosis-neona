@@ -1,5 +1,7 @@
 package com.neona.numbiosis;
 
+import android.util.Log;
+
 import com.jjoe64.graphview.series.DataPoint;
 
 import org.mariuszgromada.math.mxparser.*;
@@ -16,7 +18,7 @@ public class Raiz {
     public static final double TOL = 1e-5;
     public static final int N = 100;
 
-    public static double muller(String funcao, double x0, double x1, double x2, double tol, int n){
+    public static double muller(String funcao, double x0, double x1, double x2, double tol, int n) throws ArithmeticException{
         double  x3 = 0,
                 fx0,fx1,fx2,
                 h0,h1,
@@ -30,9 +32,9 @@ public class Raiz {
 
         // inicializar maior e menor
         menorX = x0 < x1 ? x0 : x1;
-        menorX = x1 < x2 ? x1 : x2;
+        menorX = x2 < menorX ? x2 : menorX;
         maiorX = x0 > x1 ? x0 : x1;
-        maiorX = x1 > x2 ? x1 : x2;
+        maiorX = x2 > maiorX ? x2 : maiorX;
 
         // inicializo Arrays
         dpsX = new DataPoint[n];
@@ -78,10 +80,17 @@ public class Raiz {
             if(erro < tol)
                 return x3;
 
+
             // prepara para prox iteracao
             x0 = x1;
             x1 = x2;
             x2 = x3;
+
+            // Erro matematico, parar a execucao e tratar o erro
+            if(Double.isNaN(x3)){
+                throw new ArithmeticException();
+            }
+
         }
 
         return x3;

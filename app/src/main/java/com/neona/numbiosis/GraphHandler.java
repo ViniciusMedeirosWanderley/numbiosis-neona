@@ -1,6 +1,7 @@
 package com.neona.numbiosis;
 
 import android.graphics.Color;
+import android.view.MotionEvent;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -18,6 +19,8 @@ public class GraphHandler {
     private String funcao;
     private GraphView graph;
 
+    private double menorY, maiorY;
+
     private LineGraphSeries<DataPoint> series_funcao;
     private PointsGraphSeries<DataPoint> series_x;
     private PointsGraphSeries<DataPoint> series_raiz;
@@ -28,7 +31,11 @@ public class GraphHandler {
     }
 
     public void initSerieFuncao(){
-        setSeries_funcao(criaSerieFuncao(Raiz.getMenorX(),Raiz.getMaiorX(), getFuncao()));
+        initSerieFuncao(Raiz.getMenorX(),Raiz.getMaiorX());
+    }
+
+    public void initSerieFuncao(double inferior, double superior){
+        setSeries_funcao(criaSerieFuncao(inferior,superior, getFuncao()));
         getSeries_funcao().setColor(Color.RED);
     }
 
@@ -69,11 +76,10 @@ public class GraphHandler {
         double menorX = Raiz.getMenorX() - 1;
         double maiorX = Raiz.getMaiorX() + 1;
 
-        getGraph().getViewport().setMinimalViewport(menorX, maiorX,0,0);
+        getGraph().getViewport().setMinimalViewport(menorX,maiorX,menorY,maiorY);
 
-        //getGraph().getViewport().setXAxisBoundsManual(true);
-        //getGraph().getViewport().setYAxisBoundsManual(true);
-
+        getGraph().getViewport().setXAxisBoundsManual(true);
+        getGraph().getViewport().setYAxisBoundsManual(true);
     }
 
     private LineGraphSeries<DataPoint> criaSerieFuncao(double menorX, double maiorX, String funcao){
@@ -89,6 +95,9 @@ public class GraphHandler {
         // impondo um limite a qtd de pontos para calcular
         if(qtd_pontos > 501) qtd_pontos = 501;
 
+        menorY = -1.0;
+        maiorY =  1.0;
+
         DataPoint[] dataPoints = new DataPoint[qtd_pontos];
 
         for(int i = 0; i < qtd_pontos; i++){
@@ -96,6 +105,9 @@ public class GraphHandler {
             y = _f.calculate();
             dataPoints[i] = new DataPoint(x,y);
             x += 0.1d;
+
+            if(y < menorY) menorY = y;
+            else if(y > maiorY) maiorY = y;
         }
 
         return new LineGraphSeries<>(dataPoints);

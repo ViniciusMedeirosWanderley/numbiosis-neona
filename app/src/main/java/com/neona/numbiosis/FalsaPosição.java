@@ -35,7 +35,7 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
         switch(view.getId()){
             case R.id.button_falsa://caso o click seja no botão calcular
 
-                funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da função
+                funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 System.out.println(funçãoS);//printamos o calor capturado no console
                 GraphView graph = (GraphView) findViewById(R.id.graph3); // instanciamos o gráfico
 

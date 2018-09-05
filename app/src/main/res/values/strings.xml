@@ -1,21 +1,46 @@
 <resources>
     <string name="app_name">Numbiosis</string>
+
+    <!-- Genericos -->
+    <string name="funcao">Função</string>
+    <string name="txt_EstimativasIniciais">Estimativas Iniciais</string>
+    <string name="txt_Estimativas_A">A</string>
+    <string name="txt_Estimativas_B">B</string>
+    <string name="txt_Estimativas_C">C</string>
+    <string name="txt_hint_Funcao">sin(x) - 2*x^3 + 4</string>
+    <string name="txt_hint_A">-2.0</string>
+    <string name="txt_hint_B">1.2</string>
+    <string name="txt_hint_C">3.5</string>
+    <string name="txt_hint_ERRO">1e-5</string>
+    <string name="txt_hint_N">100</string>
+    <string name="btn_BuscarRaiz">Buscar Raiz</string>
+    <string name="txt_maximoIteracoes">Máximo de Iterações</string>
+    <string name="txt_N">N</string>
+    <string name="txt_erroMinimo">Erro Mínimo</string>
+
+    <!-- Muller -->
+    <string name="titulo_muller">Método de Muller</string>
     <string name="muller">Muller</string>
+
+    <!-- Secantes -->
+    <string name="titulo_secante">Método das Secantes</string>
+    <string name="secante">Secantes</string>
+
+    <!-- Falsa Posicao -->
+    <string name="titulo_falsaPosicao">Método da Falsa Posição</string>
     <string name="falsa_posicao">Falsa Posição</string>
-    <string name="secante">Secante</string>
+
+    <!-- Menu Inicial -->
     <string name="telaInicial">Tela Inicial</string>
-    <string name="textView_função_muller">Função Muller</string>
+
+
+
     <string name="textView_x0_muller">x0</string>
     <string name="textView_x1_muller">x1</string>
     <string name="editText_x0_muller">x0</string>
     <string name="editText_x1_muller">x1</string>
     <string name="textView_x2_muller">x2</string>
     <string name="editText_x2_muller">x2</string>
-    <string name="editText_função_muller">Função Muller</string>
-    <string name="textView_tol_muller">Tol</string>
-    <string name="editText_tol_muller">Tol</string>
-    <string name="textView_n_muller">n</string>
-    <string name="editText_n_muller">n</string>
     <string name="textView_função_secante">Função</string>
     <string name="editText_função_secante">Função</string>
     <string name="textView_x0_secante">x0</string>
@@ -23,13 +48,13 @@
     <string name="editText_x0_secante">x0</string>
     <string name="editText_x1_secante">x1</string>
     <string name="textView_tol_secante">tol</string>
-    <string name="textView_n_secante">n</string>
+    <string name="textView_n_secante">N</string>
     <string name="editText_tol_secante">tol</string>
     <string name="editText_n_secante">n</string>
     <string name="btn_calcular_secante">Calcular</string>
-    <string name="btn_calcular_muller">Calcular</string>
+    <string name="btn_calcular_muller">Muller</string>
     <string name="editext_false_N">N</string>
-    <string name="btn_calcular_falsa" >Calcular</string>
+    <string name="btn_calcular_falsa">Calcular</string>
     <string name="String_false_Função">Função</string>
     <string name="editText_false_Função">Função</string>
     <string name="String_false_A">A</string>
