@@ -36,8 +36,10 @@
     <!-- Menu Inicial -->
     <string name="telaInicial">Tela Inicial</string>
 
-    <!-- Help Secante -->
+    <!-- Help -->
     <string name="titulo_help_secante">Help Secante</string>
+    <string name="titulo_help_falsa_posicao">Help Falsa Posição</string>
+    <string name="titulo_help_muller">Help Muller</string>
 
     <string name="textView_x0_muller">x0</string>
     <string name="textView_x1_muller">x1</string>

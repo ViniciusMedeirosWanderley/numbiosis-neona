@@ -103,15 +103,13 @@ public class Secante extends AppCompatActivity implements  View.OnClickListener 
                 Toast.makeText(getApplicationContext(),"Erro encontrado.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
 
             }
-                    Intent intent = new Intent(this,PlotagemActivity.class);
-                    intent.putExtra("funcao", funçãoS);
-                    intent.putExtra("raiz_ok", false);
-                    startActivity(intent);
-                }
-                break;
+            break;
+
             case R.id.btn_help_secante:
                 Intent intent = new Intent(this, HelpSecante.class);
                 startActivity(intent);
+                break;
         }
+
     }
 }

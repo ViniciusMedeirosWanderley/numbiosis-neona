@@ -32,6 +32,12 @@
         <activity
             android:name=".HelpSecante"
             android:label="@string/titulo_help_secante" />
+        <activity
+            android:name=".HelpMuller"
+            android:label="@string/titulo_help_muller" />
+        <activity
+            android:name=".HelpFalsaPosição"
+            android:label="@string/titulo_help_falsa_posicao" />
     </application>
 
 </manifest>
