@@ -96,11 +96,12 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
                 Toast.makeText(getApplicationContext(),"Erro encontrado.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
 
             }
+            break;
 
             case R.id.btn_help_falsa_posicao:
                 Intent intent = new Intent(this, HelpFalsaPosição.class);
                 startActivity(intent);
-
+                break;
         }
     }
 }

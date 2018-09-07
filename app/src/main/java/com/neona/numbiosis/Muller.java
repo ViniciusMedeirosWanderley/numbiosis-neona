@@ -107,10 +107,12 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
                 Toast.makeText(getApplicationContext(),"Erro encontrado.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
 
             }
+            break;
 
             case R.id.btn_help_muller:
                 Intent intent = new Intent(this, HelpMuller.class);
                 startActivity(intent);
+                break;
         }
 
     }

@@ -40,6 +40,23 @@
     <string name="titulo_help_secante">Help Secante</string>
     <string name="titulo_help_falsa_posicao">Help Falsa Posição</string>
     <string name="titulo_help_muller">Help Muller</string>
+    <string name="descricao">Descrição:</string>
+    <string name="parametros">Parâmetros:</string>
+    <string name="str_help_secante1">Método aberto utilizado para encontrar raízes de maneira aproximada através de secantes que intersectam a função.</string>
+    <string name="str_help_secante2">Possui 2 parâmetros, x0 e x1, que são valores iniciais para o cálculo iterativo da função.</string>
+    <string name="str_help_secante3">A cada nova iteração, um novo x é calculado, verificando se está próximo da raíz da função. Caso esteja dentro do limite
+                                     tolerável, o método retorna o valor encontrado, senão, a iteração continua até que atinja o limite de iterações imposto.</string>
+    <string name="str_help_falsa_posicao1">Método intervalar utilizado para encontrar raízes de maneira aproximada através de retas secantes cuja a intersecção
+                                           com o eixo-x está mais próximo da raíz.</string>
+    <string name="str_help_falsa_posicao2">Os parâmetros A e B são os limites do intervalo no qual a raíz se encontra.</string>
+    <string name="str_help_falsa_posicao3">A cada iteração, é verificado se o valor econtrado está próximo da raíz utilizando o erro estipulado, caso contrário,
+                                           os limites são atualizados e o cálculo é refeito. O valor é retornado se o erro estiver abaixo do informado ou o
+                                           número de iterações atingir o limite.</string>
+    <string name="str_help_muller1">Método aberto que utiliza parábolas para aproximar-se da raíz da função.</string>
+    <string name="str_help_muller2">Possui 3 parâmetros A, B e C, que são usados para a construção da parábola.</string>
+    <string name="str_help_muller3">A cada iteração, é verificada se o valor obtido se encontra próximo da raíz através do erro estimado. Caso o erro seja maior, o
+                                    cálculo continua, senão, é retornada a raiz.</string>
+
 
     <string name="textView_x0_muller">x0</string>
     <string name="textView_x1_muller">x1</string>
