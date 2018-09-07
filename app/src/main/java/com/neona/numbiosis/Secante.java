@@ -20,6 +20,9 @@ public class Secante extends AppCompatActivity implements  View.OnClickListener 
 
         Button btn_calcular_secante = (Button) findViewById(R.id.btn_calcular_secante);//instanciamos o botão da tela
         btn_calcular_secante.setOnClickListener((View.OnClickListener ) this); //colocamos ele pra ser "escutado"
+
+        Button btn_help_secante = (Button) findViewById(R.id.btn_help_secante);
+        btn_help_secante.setOnClickListener((View.OnClickListener) this);
     }
 
     @Override
@@ -78,7 +81,10 @@ public class Secante extends AppCompatActivity implements  View.OnClickListener 
                     intent.putExtra("raiz_ok", false);
                     startActivity(intent);
                 }
-
+                break;
+            case R.id.btn_help_secante:
+                Intent intent = new Intent(this, HelpSecante.class);
+                startActivity(intent);
         }
     }
 }

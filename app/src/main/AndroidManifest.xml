@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".TelaInicial"
             android:label="@string/telaInicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -28,7 +29,9 @@
             android:name=".Secante"
             android:label="@string/titulo_secante" />
         <activity android:name=".PlotagemActivity" />
-
+        <activity
+            android:name=".HelpSecante"
+            android:label="@string/titulo_help_secante" />
     </application>
 
 </manifest>

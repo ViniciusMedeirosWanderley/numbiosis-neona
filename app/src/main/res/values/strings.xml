@@ -8,9 +8,12 @@
     <string name="txt_Estimativas_B">B</string>
     <string name="txt_Estimativas_C">C</string>
     <string name="txt_hint_Funcao">sin(x) - 2*x^3 + 4</string>
+    <string name="txt_hint_Funcao2">x^2 + x - 6</string>
     <string name="txt_hint_A">-2.0</string>
     <string name="txt_hint_B">1.2</string>
     <string name="txt_hint_C">3.5</string>
+    <string name="txt_hint_x0">1.5</string>
+    <string name="txt_hint_x1">1.7</string>
     <string name="txt_hint_ERRO">1e-5</string>
     <string name="txt_hint_N">100</string>
     <string name="btn_BuscarRaiz">Buscar Raiz</string>
@@ -33,7 +36,8 @@
     <!-- Menu Inicial -->
     <string name="telaInicial">Tela Inicial</string>
 
-
+    <!-- Help Secante -->
+    <string name="titulo_help_secante">Help Secante</string>
 
     <string name="textView_x0_muller">x0</string>
     <string name="textView_x1_muller">x1</string>
