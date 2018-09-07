@@ -68,12 +68,6 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
                 tolS = tol.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 nS = n.getText().toString();
 
-                char[] compara = funcaoS.toCharArray(); //Array de char`s criado para comparar a função digitada e saber se está correta
-                int x = 0;
-                for(int i =0; i<compara.length; i++){
-                    if(Character.isLetter(compara[i]) && !(compara[i] == 'x' || compara[i] == 'X') )//caso seja uma letra e não seja x, então a função está errada
-                        x = 1;
-                }
 
                 double x0,x1,x2,tol;
                 int n;
@@ -85,7 +79,6 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
                 tol = Double.parseDouble(tolS);
 
                 if(n >= 0) {
-                    if(x == 0) {
                         try {
                             raiz = Raiz.muller(funcaoS, x0, x1, x2, tol, n);
 
@@ -95,17 +88,13 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
                             startActivity(intent);
 
                         } catch (ArithmeticException ex){
-                            Toast.makeText(getApplicationContext(),"Raiz não encontrada.\nTente outro intervalo.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Raiz não encontrada.\nVerifique se os valores estão corretos.",Toast.LENGTH_LONG).show();
 
-                            Intent intent = new Intent(this,PlotagemActivity.class);
+                            /*Intent intent = new Intent(this,PlotagemActivity.class);
                             intent.putExtra("funcao", funcaoS);
                             intent.putExtra("raiz_ok", false);
-                            startActivity(intent);
+                            startActivity(intent);*/
                         }
-
-                    }else{
-                        Toast.makeText(getApplicationContext(),"Use X como variável independente.", Toast.LENGTH_LONG).show();
-                    }
                 }else{
                     Toast.makeText(getApplicationContext(), "Máximo de Iterações deve ser positivo.", Toast.LENGTH_LONG).show();
                 }
