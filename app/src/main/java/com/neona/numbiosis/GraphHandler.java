@@ -1,20 +1,19 @@
 package com.neona.numbiosis;
 
 import android.graphics.Color;
-import android.view.MotionEvent;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.PointsGraphSeries;
-import com.neona.numbiosis.Raiz;
 
 import org.mariuszgromada.math.mxparser.Argument;
 import org.mariuszgromada.math.mxparser.Expression;
 
 import java.util.Arrays;
 
-public class GraphHandler {
+public class GraphHandler{
 
     private String funcao;
     private GraphView graph;
@@ -80,6 +79,38 @@ public class GraphHandler {
 
         getGraph().getViewport().setXAxisBoundsManual(true);
         getGraph().getViewport().setYAxisBoundsManual(true);
+
+
+        graph.getViewport().setOnXAxisBoundsChangedListener(new Viewport.OnXAxisBoundsChangedListener() {
+            double minX_ant = graph.getViewport().getMinX(true);
+            double maxX_ant = graph.getViewport().getMaxX(true);
+            double minDx, maxDx;
+            double E = 0.2;
+
+            @Override
+            public void onXAxisBoundsChanged(double minX, double maxX, Reason reason) {
+                if(reason == Reason.SCALE) {
+                    minDx = Math.abs(minX_ant - minX);
+                    maxDx = Math.abs(maxX_ant - maxX);
+
+                    if(minDx > maxDx){
+                        if (minDx < E)
+                            minX = minX_ant;
+
+                        minX_ant = minX;
+                    }else{
+                        if (maxDx < E)
+                            maxX = maxX_ant;
+
+                        maxX_ant = maxX;
+                    }
+                    graph.getViewport().setMinX(minX);
+                    graph.getViewport().setMaxX(maxX);
+                }
+            }
+        });
+
+
     }
 
     private LineGraphSeries<DataPoint> criaSerieFuncao(double menorX, double maiorX, String funcao){
