@@ -59,12 +59,15 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
         switch(view.getId()){
             case R.id.btn_calcular_muller://caso o click seja no botão calcular
 
+            try{
+
                 funcaoS = funcao.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 x0S = x0.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 x1S = x1.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 x2S = x2.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 tolS = tol.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 nS = n.getText().toString();
+
 
                 double x0,x1,x2,tol;
                 int n;
@@ -75,23 +78,31 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
                 x2 = Double.parseDouble(x2S);
                 tol = Double.parseDouble(tolS);
 
-                try {
-                    raiz = Raiz.muller(funcaoS, x0, x1, x2, tol, n);
+                if(n >= 0) {
+                        try {
+                            raiz = Raiz.muller(funcaoS, x0, x1, x2, tol, n);
 
-                    Intent intent = new Intent(this,PlotagemActivity.class);
-                    intent.putExtra("funcao", funcaoS);
-                    intent.putExtra("raiz", raiz);
-                    startActivity(intent);
+                            Intent intent = new Intent(this,PlotagemActivity.class);
+                            intent.putExtra("funcao", funcaoS);
+                            intent.putExtra("raiz", raiz);
+                            startActivity(intent);
 
-                } catch (ArithmeticException ex){
-                    Toast.makeText(getApplicationContext(),"Raiz não encontrada.\nTente outro intervalo.",Toast.LENGTH_LONG).show();
+                        } catch (ArithmeticException ex){
+                            Toast.makeText(getApplicationContext(),"Raiz não encontrada.\nVerifique se os valores estão corretos.",Toast.LENGTH_LONG).show();
 
-                    Intent intent = new Intent(this,PlotagemActivity.class);
-                    intent.putExtra("funcao", funcaoS);
-                    intent.putExtra("raiz_ok", false);
-                    startActivity(intent);
+                            /*Intent intent = new Intent(this,PlotagemActivity.class);
+                            intent.putExtra("funcao", funcaoS);
+                            intent.putExtra("raiz_ok", false);
+                            startActivity(intent);*/
+                        }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Máximo de Iterações deve ser positivo.", Toast.LENGTH_LONG).show();
                 }
 
+            }catch (NumberFormatException e){
+                Toast.makeText(getApplicationContext(),"Erro encontrado.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
+
+            }
         }
 
     }

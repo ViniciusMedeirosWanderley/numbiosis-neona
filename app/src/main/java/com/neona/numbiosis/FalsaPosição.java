@@ -13,6 +13,8 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.awt.font.NumericShaper;
+
 public class FalsaPosição extends AppCompatActivity implements  View.OnClickListener {
     double raiz;
     EditText função , a,b,tol,n;
@@ -53,12 +55,13 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
 
         switch(view.getId()){
             case R.id.button_falsaPosição://caso o click seja no botão calcular
-
+            try {
                 funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 aS = a.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 bS = b.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 tolS = tol.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 nS = n.getText().toString();
+
 
                 double a, b, tol;
                 int n;
@@ -67,23 +70,29 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
                 b = Double.parseDouble(bS);
                 tol = Double.parseDouble(tolS);
 
+                if(n >= 0) {
+                        try {
+                            raiz = Raiz.falsaPosicao(funçãoS, a, b, tol, n);
 
-                try{
-                    raiz = Raiz.falsaPosicao(funçãoS,a,b,tol,n);
+                            Intent intent = new Intent(this, PlotagemActivity.class);
+                            intent.putExtra("funcao", funçãoS);
+                            intent.putExtra("raiz", raiz);
+                            startActivity(intent);
+                        } catch (ArithmeticException ex) {
+                            Toast.makeText(getApplicationContext(),"Raiz não encontrada.\nVerifique se os valores estão corretos.",Toast.LENGTH_LONG).show();
 
-                    Intent intent = new Intent(this,PlotagemActivity.class);
-                    intent.putExtra("funcao", funçãoS);
-                    intent.putExtra("raiz", raiz);
-                    startActivity(intent);
-                }catch (ArithmeticException ex){
-                    Toast.makeText(getApplicationContext(),"Raiz não encontrada.\nTente outro intervalo.",Toast.LENGTH_LONG).show();
-
-                    Intent intent = new Intent(this,PlotagemActivity.class);
-                    intent.putExtra("funcao", funçãoS);
-                    intent.putExtra("raiz_ok", false);
-                    startActivity(intent);
+                            /*Intent intent = new Intent(this, PlotagemActivity.class);
+                            intent.putExtra("funcao", funçãoS);
+                            intent.putExtra("raiz_ok", false);
+                            startActivity(intent);*/
+                        }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Máximo de Iterações deve ser positivo.", Toast.LENGTH_LONG).show();
                 }
+            }catch (NumberFormatException e){
+                Toast.makeText(getApplicationContext(),"Erro encontrado.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
 
+            }
         }
     }
 }
