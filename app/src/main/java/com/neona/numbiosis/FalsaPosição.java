@@ -44,10 +44,10 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
             função.setText("x^2 + x - 6");
         }
         if(a.getText().toString().equals("")){
-            a.setText("1.5");
+            a.setText("-8");
         }
         if(b.getText().toString().equals("")){
-            b.setText("1.7");
+            b.setText("1.5");
         }
         if(tol.getText().toString().equals("")){
             tol.setText(getText(R.string.txt_hint_ERRO));
@@ -83,11 +83,8 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
                             startActivity(intent);
                         } catch (ArithmeticException ex) {
                             Toast.makeText(getApplicationContext(),"Raiz não encontrada.\nVerifique se os valores estão corretos.",Toast.LENGTH_LONG).show();
-
-                            /*Intent intent = new Intent(this, PlotagemActivity.class);
-                            intent.putExtra("funcao", funçãoS);
-                            intent.putExtra("raiz_ok", false);
-                            startActivity(intent);*/
+                        } catch (IllegalArgumentException ex){
+                            Toast.makeText(getApplicationContext(),ex.getMessage(),Toast.LENGTH_LONG).show();
                         }
                 }else{
                     Toast.makeText(getApplicationContext(), "Máximo de Iterações deve ser positivo.", Toast.LENGTH_LONG).show();

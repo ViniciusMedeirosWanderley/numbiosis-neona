@@ -95,7 +95,7 @@ public class Raiz {
     }
 
 
-    public static double falsaPosicao(String funcao, double a, double b, double tol, int n) throws ArithmeticException{
+    public static double falsaPosicao(String funcao, double a, double b, double tol, int n) throws ArithmeticException,IllegalArgumentException{
         double  x = b, xm = 0,
                 fa, fb, fxm,
                 erro;
@@ -117,6 +117,12 @@ public class Raiz {
 
             arg_x.setArgumentValue(b);
             fb = _f.calculate();
+
+
+            if(i == 0){
+                if(fa * fb > 0)
+                    throw new IllegalArgumentException("A função deve ter sinais opostos em A e B");
+            }
 
             arg_x.setArgumentValue(xm);
             fxm = _f.calculate();
@@ -150,10 +156,10 @@ public class Raiz {
                 return xm;
             }
 
-            if(fxm * fb > 0)
-                b = xm;
-            else if(fxm * fb < 0)
+            if(fxm * fa > 0)
                 a = xm;
+            else if(fxm * fa < 0)
+                b = xm;
             else
                 return xm;
 
