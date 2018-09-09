@@ -12,13 +12,7 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".TelaInicial"
-            android:label="@string/telaInicial">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/telaInicial"/>
         <activity
             android:name=".Muller"
             android:label="@string/titulo_muller" />
@@ -38,6 +32,15 @@
         <activity
             android:name=".HelpFalsaPosição"
             android:label="@string/titulo_help_falsa_posicao" />
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Menu" />
+        <activity android:name=".sobreActivity" />
     </application>
 
 </manifest>
