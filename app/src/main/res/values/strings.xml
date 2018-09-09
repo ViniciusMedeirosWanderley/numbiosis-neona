@@ -37,7 +37,7 @@
     <string name="telaInicial">Escolha o Método</string>
 
     <!-- MenuActivity  -->
-    <string name="raiz">Cálculo de Raíz</string>
+    <string name="raiz">Cálculo de Raízes</string>
     <string name="about">Sobre</string>
 
     <!-- Sobre  -->
