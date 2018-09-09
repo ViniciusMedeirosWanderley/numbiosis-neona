@@ -26,6 +26,10 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
 
         Button btn_calcular_muller = (Button) findViewById(R.id.btn_calcular_muller);//instanciamos o botão da tela
         btn_calcular_muller.setOnClickListener((View.OnClickListener ) this); //colocamos ele pra ser "escutado"
+
+        Button btn_help_muller = (Button) findViewById(R.id.btn_help_muller);
+        btn_help_muller.setOnClickListener((View.OnClickListener) this);
+
     }
 
     public void onClick(View view) {
@@ -103,6 +107,12 @@ public class Muller extends AppCompatActivity implements View.OnClickListener{
                 Toast.makeText(getApplicationContext(),"Erro encontrado.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
 
             }
+            break;
+
+            case R.id.btn_help_muller:
+                Intent intent = new Intent(this, HelpMuller.class);
+                startActivity(intent);
+                break;
         }
 
     }

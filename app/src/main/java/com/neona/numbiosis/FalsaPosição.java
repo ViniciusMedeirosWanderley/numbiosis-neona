@@ -26,6 +26,9 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
         Button button = (Button) findViewById(R.id.button_falsaPosição);//instanciamos o botão da tela
         button.setOnClickListener((View.OnClickListener ) this); //colocamos ele pra ser "escutado"
 
+        Button btn_help_falsa_posicao = (Button) findViewById(R.id.btn_help_falsa_posicao);
+        btn_help_falsa_posicao.setOnClickListener((View.OnClickListener) this);
+
     }
 
     @Override
@@ -93,6 +96,12 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
                 Toast.makeText(getApplicationContext(),"Erro encontrado.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
 
             }
+            break;
+
+            case R.id.btn_help_falsa_posicao:
+                Intent intent = new Intent(this, HelpFalsaPosição.class);
+                startActivity(intent);
+                break;
         }
     }
 }
