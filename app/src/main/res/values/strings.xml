@@ -34,7 +34,16 @@
     <string name="falsa_posicao">Falsa Posição</string>
 
     <!-- Menu Inicial -->
-    <string name="telaInicial">Tela Inicial</string>
+    <string name="telaInicial">Escolha o Método</string>
+
+    <!-- Menu  -->
+    <string name="raiz">Cálculo de Raíz</string>
+    <string name="about">Sobre</string>
+
+    <!-- Sobre  -->
+    <string name="textoSobre">O aplicativo *Métodos Numéricos* foi produzido por alunos do Centro de Informática da Universidade Federal da Paraíba - UFPB
+                              visando contribuir com o projeto Numbiosis, desenvolvido pelo Professor Gustavo Oliveira, que tem o objetivo de gerar inovações
+                              para os métodos numéricos. Para mais informações sobre o projeto, acesse o link: numbiosis.ci.ufpb.br</string>
 
     <!-- Help -->
     <string name="titulo_help_secante">Help Secante</string>
