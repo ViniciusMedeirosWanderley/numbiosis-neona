@@ -34,7 +34,7 @@ public class MenuActivity extends AppCompatActivity implements  View.OnClickList
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.RaizButton:
-                Intent it = new Intent(this, TelaInicial.class);
+                Intent it = new Intent(this, TelaInicialActivity.class);
                 startActivity(it);
                 break;
             case R.id.SobreButton:

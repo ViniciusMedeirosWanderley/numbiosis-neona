@@ -22,8 +22,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/descricao"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="104dp"
                 tools:layout_editor_absoluteY="387dp" />
@@ -45,9 +46,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/parametros"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:paddingLeft="8dp"
-
+                android:paddingRight="8dp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="75dp"
                 tools:layout_editor_absoluteY="349dp" />
@@ -88,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="151dp"
                 android:alpha="1.0"
+                android:paddingBottom="12dp"
                 app:srcCompat="@drawable/falsaposicao2" />
 
         </LinearLayout>

@@ -11,8 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".TelaInicial"
-            android:label="@string/telaInicial"/>
+            android:name=".TelaInicialActivity"
+            android:label="@string/telaInicial"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MullerActivity"
             android:label="@string/titulo_muller" />
@@ -32,15 +33,18 @@
         <activity
             android:name=".HelpFalsaPosicao"
             android:label="@string/titulo_help_falsa_posicao" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".SobreActivity" />
+        <activity android:name=".MenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SobreActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
