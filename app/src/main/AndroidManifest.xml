@@ -14,10 +14,10 @@
             android:name=".TelaInicial"
             android:label="@string/telaInicial"/>
         <activity
-            android:name=".Muller"
+            android:name=".MullerActivity"
             android:label="@string/titulo_muller" />
         <activity
-            android:name=".FalsaPosição"
+            android:name=".FalsaPosicao"
             android:label="@string/titulo_falsaPosicao" />
         <activity
             android:name=".Secante"
@@ -30,7 +30,7 @@
             android:name=".HelpMuller"
             android:label="@string/titulo_help_muller" />
         <activity
-            android:name=".HelpFalsaPosição"
+            android:name=".HelpFalsaPosicao"
             android:label="@string/titulo_help_falsa_posicao" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
@@ -39,8 +39,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Menu" />
-        <activity android:name=".sobreActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".SobreActivity" />
     </application>
 
 </manifest>

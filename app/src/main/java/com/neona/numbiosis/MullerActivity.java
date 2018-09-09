@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
 
-public class Muller extends AppCompatActivity implements View.OnClickListener{
+public class MullerActivity extends AppCompatActivity implements View.OnClickListener{
     double raiz;
     EditText funcao, x0,x1,x2,tol,n;
     String funcaoS,x0S,x1S,x2S,tolS,nS;//variaveis para captação dos dados introduzidos pelo usuário

@@ -12,8 +12,8 @@ import com.jjoe64.graphview.GraphView;
 
 public class Secante extends AppCompatActivity implements  View.OnClickListener {
     double raiz;
-    EditText função , x0,x1,tol,n;
-    String funçãoS,x0S,x1S,tolS,nS;//variaveis para captação dos dados introduzidos pelo usuário
+    EditText funcao , x0,x1,tol,n;
+    String funcaoS,x0S,x1S,tolS,nS;//variaveis para captação dos dados introduzidos pelo usuário
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_secante);//tela que estamos usando
@@ -28,14 +28,14 @@ public class Secante extends AppCompatActivity implements  View.OnClickListener 
     @Override
     public void onClick(View view) {
 
-        função = (EditText) findViewById(R.id.editText_função_secante); //instanciamos as caixas de texto da tela
+        funcao = (EditText) findViewById(R.id.editText_função_secante); //instanciamos as caixas de texto da tela
         x0 = (EditText) findViewById(R.id.editText_x0_secante);
         x1 = (EditText) findViewById(R.id.editText_x1_secante);
         tol = (EditText) findViewById(R.id.editText_tol_secante);
         n = (EditText) findViewById(R.id.editText_n_secante);
 
-        if(função.getText().toString().equals("")){
-            função.setText("x^2 + x - 6");
+        if(funcao.getText().toString().equals("")){
+            funcao.setText("x^2 + x - 6");
         }
         if(x0.getText().toString().equals("")){
             x0.setText("1.5");
@@ -53,7 +53,7 @@ public class Secante extends AppCompatActivity implements  View.OnClickListener 
         switch(view.getId()){
             case R.id.btn_calcular_secante://caso o click seja no botão calcular
             try {
-                funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
+                funcaoS = funcao.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 x0S = x0.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 x1S = x1.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 tolS = tol.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
@@ -70,10 +70,10 @@ public class Secante extends AppCompatActivity implements  View.OnClickListener 
 
                 if(n >= 0) {
                         try {
-                            raiz = Raiz.secante(funçãoS, x0, x1, tol, n);
+                            raiz = Raiz.secante(funcaoS, x0, x1, tol, n);
 
                             Intent intent = new Intent(this, PlotagemActivity.class);
-                            intent.putExtra("funcao", funçãoS);
+                            intent.putExtra("funcao", funcaoS);
                             intent.putExtra("raiz", raiz);
                             startActivity(intent);
                         } catch (ArithmeticException ex) {

@@ -15,7 +15,7 @@
         android:layout_marginRight="141dp"
         android:layout_marginStart="141dp"
         android:layout_marginTop="20dp"
-        android:text="@string/String_false_Função"
+        android:text="@string/String_false_Funcao"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"

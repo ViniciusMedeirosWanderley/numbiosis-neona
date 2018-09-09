@@ -30,9 +30,9 @@ public class SplashScreenActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            Intent intent = new Intent(SplashScreenActivity.this, Menu.class);
+            Intent intent = new Intent(SplashScreenActivity.this, MenuActivity.class);
             startActivity(intent);
-            SplashScreenActivity.this.finish();
+            //SplashScreenActivity.this.finish();
         }
     }
 

@@ -1,7 +1,6 @@
 package com.neona.numbiosis;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,16 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
-
-import java.awt.font.NumericShaper;
-
-public class FalsaPosição extends AppCompatActivity implements  View.OnClickListener {
+public class FalsaPosicao extends AppCompatActivity implements  View.OnClickListener {
     double raiz;
-    EditText função , a,b,tol,n;
-    String funçãoS,aS,bS,tolS,nS;//variaveis para captação dos dados introduzidos pelo usuário
+    EditText funcao , a,b,tol,n;
+    String funcaoS,aS,bS,tolS,nS;//variaveis para captação dos dados introduzidos pelo usuário
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_falsa_posicao);//tela que estamos usando
@@ -34,14 +27,14 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
     @Override
     public void onClick(View view) {
 
-        função = (EditText) findViewById(R.id.editText_função_falsaPosição); //instanciamos as caixas de texto da tela
+        funcao = (EditText) findViewById(R.id.editText_função_falsaPosição); //instanciamos as caixas de texto da tela
         a = (EditText) findViewById(R.id.editText_a_falsaPosição);
         b = (EditText) findViewById(R.id.editText_b_falsaPosição);
         tol = (EditText) findViewById(R.id.editText_tol_falsaPosição);
         n = (EditText) findViewById(R.id.editText_n_falsPosição);
 
-        if(função.getText().toString().equals("")){
-            função.setText("x^2 + x - 6");
+        if(funcao.getText().toString().equals("")){
+            funcao.setText("x^2 + x - 6");
         }
         if(a.getText().toString().equals("")){
             a.setText("-8");
@@ -59,7 +52,7 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
         switch(view.getId()){
             case R.id.button_falsaPosição://caso o click seja no botão calcular
             try {
-                funçãoS = função.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
+                funcaoS = funcao.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 aS = a.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 bS = b.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
                 tolS = tol.getText().toString();   //capturamos o que foi digitado na caixa de texto da funcao
@@ -75,10 +68,10 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
 
                 if(n >= 0) {
                         try {
-                            raiz = Raiz.falsaPosicao(funçãoS, a, b, tol, n);
+                            raiz = Raiz.falsaPosicao(funcaoS, a, b, tol, n);
 
                             Intent intent = new Intent(this, PlotagemActivity.class);
-                            intent.putExtra("funcao", funçãoS);
+                            intent.putExtra("funcao", funcaoS);
                             intent.putExtra("raiz", raiz);
                             startActivity(intent);
                         } catch (ArithmeticException ex) {
@@ -96,7 +89,7 @@ public class FalsaPosição extends AppCompatActivity implements  View.OnClickLi
             break;
 
             case R.id.btn_help_falsa_posicao:
-                Intent intent = new Intent(this, HelpFalsaPosição.class);
+                Intent intent = new Intent(this, HelpFalsaPosicao.class);
                 startActivity(intent);
                 break;
         }

@@ -21,7 +21,7 @@
     <string name="txt_N">N</string>
     <string name="txt_erroMinimo">Erro Mínimo</string>
 
-    <!-- Muller -->
+    <!-- MullerActivity -->
     <string name="titulo_muller">Método de Muller</string>
     <string name="muller">Muller</string>
 
@@ -33,10 +33,10 @@
     <string name="titulo_falsaPosicao">Método da Falsa Posição</string>
     <string name="falsa_posicao">Falsa Posição</string>
 
-    <!-- Menu Inicial -->
+    <!-- MenuActivity Inicial -->
     <string name="telaInicial">Escolha o Método</string>
 
-    <!-- Menu  -->
+    <!-- MenuActivity  -->
     <string name="raiz">Cálculo de Raíz</string>
     <string name="about">Sobre</string>
 
@@ -87,8 +87,8 @@
     <string name="btn_calcular_muller">Muller</string>
     <string name="editext_false_N">N</string>
     <string name="btn_calcular_falsa">Calcular</string>
-    <string name="String_false_Função">Função</string>
-    <string name="editText_false_Função">Função</string>
+    <string name="String_false_Funcao">Função</string>
+    <string name="editText_false_Funcao">Função</string>
     <string name="String_false_A">A</string>
     <string name="String_false_B">B</string>
     <string name="edittext_false_A">a</string>

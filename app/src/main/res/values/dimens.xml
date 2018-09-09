@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="função_size">18sp</dimen>
+    <dimen name="funcao_size">18sp</dimen>
     <dimen name="estimativas_size">15sp</dimen>
 </resources>

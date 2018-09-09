@@ -6,7 +6,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CheckedTextView;
 
-public class sobreActivity extends AppCompatActivity {
+public class SobreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
