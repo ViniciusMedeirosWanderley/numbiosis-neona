@@ -41,7 +41,7 @@
     <string name="about">Sobre</string>
 
     <!-- Sobre  -->
-    <string name="textoSobre">O aplicativo <b>Métodos Numéricos</b> foi produzido por alunos do Centro de Informática da Universidade Federal da Paraíba (UFPB)
+    <string name="textSobre">O aplicativo <b>Métodos Numéricos</b> foi produzido por alunos do Centro de Informática da Universidade Federal da Paraíba (UFPB)
                               visando contribuir com o projeto <b>Numbiosis</b>, desenvolvido pelo Prof. Gustavo Oliveira.
                                 \n\nPara mais informações sobre o projeto, acesse o link:\n\n<font><b>http://numbiosis.ci.ufpb.br</b></font></string>
 

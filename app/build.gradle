@@ -8,7 +8,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.neona.numbiosis"
-        minSdkVersion 16
+        minSdkVersion 26 // mudando a SDK minima
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -33,4 +33,30 @@ dependencies {
 
     implementation 'com.jjoe64:graphview:4.2.2'
     implementation 'org.mariuszgromada.math:MathParser.org-mXparser:4.0.0'
+
+    // Pacote 2
+    implementation 'org.mariuszgromada.math:MathParser.org-mXparser:4.2.0'
+    implementation 'gov.nist.math:jama:1.0.3'
+    implementation 'org.matheclipse:matheclipse-core:1.0.0-SNAPSHOT'
+
+    annotationProcessor 'org.apache.logging.log4j:log4j-core:2.5'
+
+}
+
+// Pacote 2
+repositories{
+    mavenCentral()
+    //snapshots-repo
+    maven{
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+    //jas-repository
+    maven{
+        url 'http://krum.rz.uni-mannheim.de/maven-repository'
+    }
+    //Lab4Inf
+    maven{
+        url 'http://www.lab4inf.fh-muenster.de/lab4inf/maven-repository'
+    }
+
 }
