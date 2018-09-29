@@ -6,7 +6,7 @@ import java.text.NumberFormat;
 
 public class Exemplo {
 
-    private static void testGaussJordan() {
+    public void testGaussJordan() {
         double[][] a = {{2,1,-1},
                         {5,2,2},
                         {3,1,1}};
@@ -31,7 +31,7 @@ public class Exemplo {
         B.print(5, 2);
     }
 
-    private static void testNewtonNaoLinear() {
+   public void testNewtonNaoLinear() {
         String[] funcoes = {"x + y -3",
                             "x^2 + y^2 -9"};
 

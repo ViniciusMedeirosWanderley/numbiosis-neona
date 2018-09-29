@@ -37,7 +37,7 @@ public class GaussJordan {
         int n = A.getColumnDimension();
 
         if(Math.abs(A.det()) <= EPSILON)
-            return; // det == 0, eh uma Matriz Singular, nao tem solucao
+            throw new ArithmeticException("Matriz A é singular."); // det == 0, eh uma Matriz Singular, nao tem solucao
 
         double[][] a = A.getArray();
         double[][] b = B.getArray();

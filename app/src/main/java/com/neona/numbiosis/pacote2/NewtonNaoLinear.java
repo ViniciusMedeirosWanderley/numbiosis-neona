@@ -1,19 +1,18 @@
 package com.neona.numbiosis.pacote2;
 
 import Jama.Matrix;
-import org.mariuszgromada.math.mxparser.Argument;
-import org.matheclipse.core.eval.ExprEvaluator;
+import org.mariuszgromada.math.mxparser.*;
 
 /**
  * Dados: o vetor inicial x (0) ; ε1 , ε2 > 0:
- Passo I: computar F(xk) e J(xk)
- Passo II: se ||F(xk)|| menor que ε1 , x ∗ = xk e pare;
- senão
+    Passo I: computar F(xk) e J(xk)
+    Passo II: se ||F(xk)|| menor que ε1 , x ∗ = xk e pare;
+    senão
     Passo III: obter s(k) , solução do sistema J*s(k) = −F
     Passo IV: atualizar x(k+1) = xk + s(k)
     Passo V: se ||x(k+1) − xk || menor que ε2, x ∗ = x(k+1) e pare;
     senão
-        Passo VI: atualizar k = k + 1
+    Passo VI: atualizar k = k + 1
  *
  * @author Leonardo Villeth
  */
@@ -32,8 +31,6 @@ public class NewtonNaoLinear {
     double EPSILON_2 = 1e-4;
     double[] x0;
 
-    ExprEvaluator eval;
-
     /**
      *
      * @param funcoes array com todas as funcoes do sistema.
@@ -49,13 +46,10 @@ public class NewtonNaoLinear {
         this.x0 = x0;
         this.EPSILON_1 = epsilon1;
         this.EPSILON_2 = epsilon2;
-        this.eval = new ExprEvaluator(false, 100);
 
         this.J = new String[funcoes.length][x0.length];
         this.Jx = new double[funcoes.length][x0.length];
         this.Fx = new double[x0.length];
-
-        initGrads();
     }
 
     /**
@@ -63,28 +57,35 @@ public class NewtonNaoLinear {
      * @return vetor solucao.
      */
     public double[] resolve(){
+        initGrads();
+
         for(int k = 0; k < 100; k++){
             System.out.println("\nIteracao ["+(k+1)+"]");
 
+            Expression f = new Expression();
             //passo 1
             //computar F(xk) e J(xk)
             for (int i = 0; i < x0.length; i++) {
                 switch(i){
                     case 0:
-                        eval.defineVariable("x", x0[i]);
+                        f.defineArgument("x", x0[i]);
                         break;
                     case 1:
-                        eval.defineVariable("y", x0[i]);
+                        f.defineArgument("y", x0[i]);
                         break;
                     case 2:
-                        eval.defineVariable("z", x0[i]);
+                        f.defineArgument("z", x0[i]);
+                        break;
+                    case 3:
+                        f.defineArgument("w", x0[i]);
                         break;
                 }
             }
 
             System.out.println("\nFx:");
             for (int i = 0; i < funcoes.length; i++) {
-                Fx[i] = eval.evalf(funcoes[i]);
+                f.setExpressionString(funcoes[i]);
+                Fx[i] = f.calculate();
                 System.out.println(Fx[i]);
                 Fx[i] = -Fx[i];
             }
@@ -92,7 +93,8 @@ public class NewtonNaoLinear {
             System.out.println("\nJx:");
             for (int i = 0; i < J.length; i++) {
                 for (int j = 0; j < J[0].length; j++) {
-                    Jx[i][j] = eval.evalf(J[i][j]);
+                    f.setExpressionString(J[i][j]);
+                    Jx[i][j] = f.calculate();
                     System.out.print(Jx[i][j]+"  ");
                 }
                 System.out.println();
@@ -144,7 +146,6 @@ public class NewtonNaoLinear {
      * Inicializo o array de funcoes de gradiente (String).
      */
     public void initGrads(){
-        eval.clearVariables();
         int j;
         for (int i = 0; i < funcoes.length; i++) {
             StringBuilder sb1 = new StringBuilder();
@@ -153,9 +154,9 @@ public class NewtonNaoLinear {
             j = 0;
             for (String var : variaveis[i]) {
                 StringBuilder sb = new StringBuilder();
-                sb.append("D(".concat(funcoes[i]));
+                sb.append("der(".concat(funcoes[i]));
                 sb.append(",").append(var).append(")");
-                J[i][j] = eval.eval(sb.toString()).toString();
+                J[i][j] = sb.toString();
                 j++;
 
                 sb1.append(J[i][j - 1]);
@@ -167,6 +168,8 @@ public class NewtonNaoLinear {
             System.out.println(gradientes[i]);
         }
     }
+
+
 
     /**
      * Norma para um vetor.
@@ -206,4 +209,3 @@ public class NewtonNaoLinear {
     }
 
 }
-

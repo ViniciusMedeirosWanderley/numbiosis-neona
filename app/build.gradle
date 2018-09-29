@@ -8,7 +8,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.neona.numbiosis"
-        minSdkVersion 26 // mudando a SDK minima
+        minSdkVersion 16 // mudando a SDK minima
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -19,44 +19,28 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
+
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.jjoe64:graphview:4.2.2'
-    implementation 'org.mariuszgromada.math:MathParser.org-mXparser:4.0.0'
 
     // Pacote 2
     implementation 'org.mariuszgromada.math:MathParser.org-mXparser:4.2.0'
     implementation 'gov.nist.math:jama:1.0.3'
-    implementation 'org.matheclipse:matheclipse-core:1.0.0-SNAPSHOT'
 
-    annotationProcessor 'org.apache.logging.log4j:log4j-core:2.5'
-
-}
-
-// Pacote 2
-repositories{
-    mavenCentral()
-    //snapshots-repo
-    maven{
-        url 'https://oss.sonatype.org/content/repositories/snapshots'
-    }
-    //jas-repository
-    maven{
-        url 'http://krum.rz.uni-mannheim.de/maven-repository'
-    }
-    //Lab4Inf
-    maven{
-        url 'http://www.lab4inf.fh-muenster.de/lab4inf/maven-repository'
-    }
-
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
 }
