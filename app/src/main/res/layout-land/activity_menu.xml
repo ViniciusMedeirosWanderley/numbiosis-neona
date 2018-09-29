@@ -8,44 +8,27 @@
     tools:layout_editor_absoluteY="25dp">
 
     <ImageView
-        android:id="@+id/menu_background"
-        android:layout_width="387dp"
+        android:id="@+id/menu_background_landscape"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="Imagem do fundo do menu"
         android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/menubackground" />
-
-    <ImageView
-        android:id="@+id/menu_name"
-        android:layout_width="272dp"
-        android:layout_height="138dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="Nome do app?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/menu_background"
-        app:srcCompat="@drawable/titulo" />
+        app:srcCompat="@drawable/menubackgroundlanded" />
 
     <Button
         android:id="@+id/RaizButton"
         android:layout_width="196dp"
         android:layout_height="70dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
         android:text="@string/raiz"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_name" />
 
@@ -57,43 +40,56 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:text="@string/about"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Button3" />
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/Button3"
+        app:layout_constraintTop_toBottomOf="@+id/SistemasButton" />
 
-    <Button
-        android:id="@+id/SistemasButton"
-        android:layout_width="196dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:enabled="true"
-        android:text="@string/sistemas"
-        android:textSize="18sp"
+    <ImageView
+        android:id="@+id/menu_name"
+        android:layout_width="247dp"
+        android:layout_height="116dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="17dp"
+        android:contentDescription="Nome do app?"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RaizButton" />
+        app:layout_constraintTop_toTopOf="@+id/menu_background_landscape"
+        app:srcCompat="@drawable/titulo" />
 
     <Button
         android:id="@+id/Button3"
         android:layout_width="196dp"
         android:layout_height="70dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
         android:enabled="false"
         android:text="Pacote 3"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/SistemasButton"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SistemasButton" />
+        app:layout_constraintTop_toBottomOf="@+id/RaizButton" />
+
+    <Button
+        android:id="@+id/SistemasButton"
+        android:layout_width="196dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="28dp"
+        android:enabled="true"
+        android:text="@string/sistemas"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/RaizButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_name" />
+
 </android.support.constraint.ConstraintLayout>

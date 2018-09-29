@@ -33,11 +33,24 @@
     <string name="titulo_falsaPosicao">Método da Falsa Posição</string>
     <string name="falsa_posicao">Falsa Posição</string>
 
-    <!-- MenuActivity Inicial -->
+    <!-- Gauss-Jordan-->
+    <string name="titulo_gaussjordan">Método de Gauss-Jordan</string>
+    <string name="gaussjordan">Gauss-Jordan</string>
+
+    <!-- Newton -->
+    <string name="titulo_newton">Método de Newton</string>
+    <string name="newton">Newton</string>
+
+    <!-- Spline Natural -->
+    <string name="titulo_spline">Método do Spline Natural</string>
+    <string name="spline">Spline Natural</string>
+
+    <!-- TelaInicialActivity -->
     <string name="telaInicial">Escolha o Método</string>
 
     <!-- MenuActivity  -->
     <string name="raiz">Cálculo de Raízes</string>
+    <string name="sistemas">Resolução de Sistemas</string>
     <string name="about">Sobre</string>
 
     <!-- Sobre  -->

@@ -24,6 +24,9 @@ public class MenuActivity extends AppCompatActivity implements  View.OnClickList
         Button bt_raiz = (Button) findViewById(R.id.RaizButton);
         bt_raiz.setOnClickListener((View.OnClickListener ) this);
 
+        Button bt_sistemas = (Button) findViewById(R.id.SistemasButton);
+        bt_sistemas.setOnClickListener((View.OnClickListener ) this);
+
         Button bt_sobre = (Button) findViewById(R.id.SobreButton);
         bt_sobre.setOnClickListener((View.OnClickListener ) this);
 
@@ -37,9 +40,13 @@ public class MenuActivity extends AppCompatActivity implements  View.OnClickList
                 Intent it = new Intent(this, TelaInicialActivity.class);
                 startActivity(it);
                 break;
-            case R.id.SobreButton:
-                Intent it2 = new Intent(this, SobreActivity.class);
+            case R.id.SistemasButton:
+                Intent it2 = new Intent(this, TelaSistemasActivity.class);
                 startActivity(it2);
+                break;
+            case R.id.SobreButton:
+                Intent it3 = new Intent(this, SobreActivity.class);
+                startActivity(it3);
                 break;
         }
     }
