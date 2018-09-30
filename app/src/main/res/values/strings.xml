@@ -79,11 +79,11 @@
     <string name="titulo_help_muller">Método de Muller</string>
     <string name="descricao">Descrição:</string>
     <string name="parametros">Parâmetros:</string>
-    <string name="str_help_secante1">Método aberto utilizado para encontrar raízes de maneira aproximada através de secantes que intersectam a função.</string>
+    <string name="str_help_secante1">Método aberto utilizado para encontrar raízes de maneira aproximada através de secantes que intersetam a função.</string>
     <string name="str_help_secante2">Possui 2 parâmetros, A e B, que são valores iniciais para o cálculo iterativo da função.</string>
     <string name="str_help_secante3">A cada nova iteração, um novo x é calculado, verificando se está próximo da raíz da função. Caso esteja dentro do limite
                                      tolerável, o método retorna o valor encontrado, senão, a iteração continua até que atinja o limite de iterações imposto.</string>
-    <string name="str_help_falsa_posicao1">Método intervalar utilizado para encontrar raízes de maneira aproximada através de retas secantes cuja a intersecção
+    <string name="str_help_falsa_posicao1">Método intervalar utilizado para encontrar raízes de maneira aproximada através de retas secantes cuja a interseção
                                            com o eixo-x está mais próximo da raíz.</string>
     <string name="str_help_falsa_posicao2">Os parâmetros A e B são os limites do intervalo no qual a raíz se encontra.</string>
     <string name="str_help_falsa_posicao3">A cada iteração, é verificado se o valor econtrado está próximo da raíz utilizando o erro estipulado, caso contrário,
@@ -93,9 +93,9 @@
     <string name="str_help_muller2">Possui 3 parâmetros A, B e C, que são usados para a construção da parábola.</string>
     <string name="str_help_muller3">A cada iteração, é verificada se o valor obtido se encontra próximo da raíz através do erro estimado. Caso o erro seja maior, o
                                     cálculo continua, senão, é retornada a raiz.</string>
-    <string name="str_help_spline1">Técnica de aproximação que consiste em se dividir o intervalo de interesse em vários
-                                    subintervalos e interpolar, da forma mais suave possível, nestes subintervalos com polinômios
-                                    de grau pequeno. Na spline natural, considera-se que as derivadas de ordem 2 dos pontos inicial e final igual a 0.</string>
+    <string name="str_help_spline1">Técnica de aproximação que consiste em dividir o intervalo de interesse em vários
+                                    subintervalos e interpolá-los, da forma mais suave possível, nestes subintervalos com polinômios
+                                    de grau menor. Na spline natural, considera-se que as derivadas de ordem 2 dos pontos inicial e final são iguais a 0.</string>
     <string name="str_help_spline2">Possui 8 parâmetros de entrada que são pontos da função com seus respectivos f(x) conhecidos.</string>
 
 
@@ -130,7 +130,5 @@
     <string name="editText_false_Tol">Tol</string>
     <string name="editText_false_X">X</string>
     <string name="String_false_N">N</string>
-
-    <string name="single_formula">$\\int_0^\\infty e^{-x^2} dx=\\frac{\\sqrt{\\pi}}{2}$</string>
 
 </resources>
