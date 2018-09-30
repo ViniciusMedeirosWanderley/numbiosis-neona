@@ -34,5 +34,9 @@ public class EquacoesSpline extends AppCompatActivity {
         eq2.setText(eq2S);
         eq3.setText(eq3S);
 
+        eq1.setWidth(eq1S.length()*18);
+        eq2.setWidth(eq2S.length()*18);
+        eq3.setWidth(eq3S.length()*18);
+
     }
 }
