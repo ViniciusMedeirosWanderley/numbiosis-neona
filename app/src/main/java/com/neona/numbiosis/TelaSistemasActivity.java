@@ -6,15 +6,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class TelaSistemasActivity extends AppCompatActivity {
+public class TelaSistemasActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_sistemas);
 
+        Button bt_spnatural = (Button) findViewById(R.id.SplineButton);
+        bt_spnatural.setOnClickListener((View.OnClickListener ) this);
 
 
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.SplineButton:
+                Intent it3 = new Intent(this, Spline.class);
+                startActivity(it3);
+                break;
+        }
     }
 }

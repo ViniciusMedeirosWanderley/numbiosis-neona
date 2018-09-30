@@ -47,6 +47,15 @@
         <activity
             android:name=".TelaSistemasActivity"
             android:label="@string/telaInicial" />
+        <activity
+            android:name=".Spline"
+            android:label="@string/titulo_spline" />
+        <activity
+            android:name=".EquacoesSpline"
+            android:label="@string/Equacoes_Polinomiais" />
+        <activity
+            android:name=".HelpSpline"
+            android:label="@string/titulo_spline" />
     </application>
 
 </manifest>
