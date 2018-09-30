@@ -33,15 +33,28 @@
     <string name="titulo_falsaPosicao">Método da Falsa Posição</string>
     <string name="falsa_posicao">Falsa Posição</string>
 
-    <!-- MenuActivity Inicial -->
+    <!-- Gauss-Jordan-->
+    <string name="titulo_gaussjordan">Método de Gauss-Jordan</string>
+    <string name="gaussjordan">Gauss-Jordan</string>
+
+    <!-- Newton -->
+    <string name="titulo_newton">Método de Newton</string>
+    <string name="newton">Newton</string>
+
+    <!-- Spline Natural -->
+    <string name="titulo_spline">Método do Spline Natural</string>
+    <string name="spline">Spline Natural</string>
+
+    <!-- TelaInicialActivity -->
     <string name="telaInicial">Escolha o Método</string>
 
     <!-- MenuActivity  -->
-    <string name="raiz">Cálculo de Raíz</string>
+    <string name="raiz">Cálculo de Raízes</string>
+    <string name="sistemas">Resolução de Sistemas</string>
     <string name="about">Sobre</string>
 
     <!-- Sobre  -->
-    <string name="textoSobre">O aplicativo <b>Métodos Numéricos</b> foi produzido por alunos do Centro de Informática da Universidade Federal da Paraíba (UFPB)
+    <string name="textSobre">O aplicativo <b>Métodos Numéricos</b> foi produzido por alunos do Centro de Informática da Universidade Federal da Paraíba (UFPB)
                               visando contribuir com o projeto <b>Numbiosis</b>, desenvolvido pelo Prof. Gustavo Oliveira.
                                 \n\nPara mais informações sobre o projeto, acesse o link:\n\n<font><b>http://numbiosis.ci.ufpb.br</b></font></string>
 

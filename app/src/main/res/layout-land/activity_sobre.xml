@@ -7,13 +7,13 @@
     tools:context=".SobreActivity">
 
     <ImageView
-        android:id="@+id/background_sobre"
+        android:id="@+id/background_sobre_landscape"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backgroundapp" />
+        app:srcCompat="@drawable/backgroundapplanded" />
 
     <CheckedTextView
         android:id="@+id/Texto"
@@ -31,7 +31,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background_sobre" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

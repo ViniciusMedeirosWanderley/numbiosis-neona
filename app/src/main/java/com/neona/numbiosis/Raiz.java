@@ -80,11 +80,12 @@ public class Raiz {
             nIteracoes  = i + 1;
             //------------------------------------
 
-            // checar erro
-            erro = erro(x2, x3, true);
-            if(erro < tol)
-                return x3;
-
+            if(!Double.isInfinite(a) && !Double.isInfinite(b)) {
+                // checar erro
+                erro = erro(x2, x3, true);
+                if (erro < tol && x2 != x3)
+                    return x3;
+            }
             // prepara para prox iteracao
             x0 = x1;
             x1 = x2;

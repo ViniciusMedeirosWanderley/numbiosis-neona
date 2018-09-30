@@ -121,6 +121,7 @@ public class GraphHandler{
         Expression _f = new Expression(funcao, arg_x);
         double x = inf;
         double y;
+        int cont = 0;
         qtd_pontos++;
 
         // impondo um limite a qtd de pontos para calcular
@@ -130,15 +131,24 @@ public class GraphHandler{
         maiorY =  1.0;
 
         DataPoint[] dataPoints = new DataPoint[qtd_pontos];
+        DataPoint[] dataPoints1;
 
         for(int i = 0; i < qtd_pontos; i++){
             arg_x.setArgumentValue(x);
             y = _f.calculate();
-            dataPoints[i] = new DataPoint(x,y);
-            x += 0.1d;
 
-            if(y < menorY) menorY = y;
-            else if(y > maiorY) maiorY = y;
+            if(!Double.isInfinite(y) && !Double.isNaN(y)){
+                dataPoints[cont++] = new DataPoint(x,y);
+                if(y < menorY) menorY = y;
+                else if(y > maiorY) maiorY = y;
+            }
+
+            x += 0.1d;
+        }
+
+        if(cont != qtd_pontos){
+            dataPoints1 = Arrays.copyOf(dataPoints, cont);
+            return new LineGraphSeries<>(dataPoints1);
         }
 
         return new LineGraphSeries<>(dataPoints);
