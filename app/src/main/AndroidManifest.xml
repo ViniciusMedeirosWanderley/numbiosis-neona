@@ -54,8 +54,13 @@
             android:label="@string/Equacoes_Polinomiais" />
 
         <activity
-            android:name=".GaussJordan"
+            android:name=".GaussJordanActivity"
             android:label="Metodo do Gauss Jordan" />
+
+        <activity
+            android:name="GaussJordanSolucaoActivity"
+            android:label="Solucão do Gauss Jordan" />
+
         <activity
             android:name=".HelpSpline"
             android:label="@string/titulo_spline" />

@@ -37,7 +37,7 @@ public class TelaSistemasActivity extends AppCompatActivity implements View.OnCl
                 break;
 
             case R.id.GJButton:
-                Intent it4 = new Intent(this, GaussJordan.class);
+                Intent it4 = new Intent(this, GaussJordanActivity.class);
                 startActivity(it4);
                 break;
         }

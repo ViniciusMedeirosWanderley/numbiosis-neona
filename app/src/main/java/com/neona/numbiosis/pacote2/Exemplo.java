@@ -17,10 +17,10 @@ public class Exemplo {
         int n = 3;
 
         Matrix A = new Matrix(a);
-        Matrix B = new Matrix(b, 3);
+        Matrix B = new Matrix(b, m);
 
         // nossa solucao
-        System.out.println("GaussJordan\n");
+        System.out.println("GaussJordanActivity\n");
 
         GaussJordan gj = new GaussJordan(A, B);
         gj.resolve();

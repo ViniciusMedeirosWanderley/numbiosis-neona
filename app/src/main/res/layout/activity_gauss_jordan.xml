@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText_GJ"
+        android:id="@+id/editText_GJ_dimensoesA"
         android:layout_width="68dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editText_GJ_dimensoesB"
         android:layout_width="69dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -71,4 +71,23 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_tamanho_B" />
+
+    <EditText
+        android:id="@+id/txt_matrizes"
+        android:layout_width="275dp"
+        android:layout_height="188dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="166dp"
+        android:background="@drawable/border"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="2 1 -1 5 2 2 3 1 1 \n1 -4 5"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/GJ_botao_calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
