@@ -130,5 +130,6 @@
     <string name="editText_false_Tol">Tol</string>
     <string name="editText_false_X">X</string>
     <string name="String_false_N">N</string>
+    <string name="titulo_newton_metodo">Método de Newton</string>
 
 </resources>

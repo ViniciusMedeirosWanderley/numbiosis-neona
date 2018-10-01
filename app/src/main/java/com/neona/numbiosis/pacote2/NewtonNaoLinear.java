@@ -66,7 +66,7 @@ public class NewtonNaoLinear {
             //passo 1
             //computar F(xk) e J(xk)
             for (int i = 0; i < x0.length; i++) {
-                switch(i){
+               switch(i){
                     case 0:
                         f.defineArgument("x", x0[i]);
                         break;
@@ -81,6 +81,7 @@ public class NewtonNaoLinear {
                         break;
                 }
             }
+            //*/
 
             System.out.println("\nFx:");
             for (int i = 0; i < funcoes.length; i++) {
@@ -92,7 +93,13 @@ public class NewtonNaoLinear {
 
             System.out.println("\nJx:");
             for (int i = 0; i < J.length; i++) {
-                for (int j = 0; j < J[0].length; j++) {
+                for (int j = 0; j < J[i].length; j++) {
+
+                    if(J[i][j] == null){// alterar construçao de J[][] para retirar essa checagem
+                        Jx[i][j] = 0;
+                        continue;
+                    }
+
                     f.setExpressionString(J[i][j]);
                     Jx[i][j] = f.calculate();
                     System.out.print(Jx[i][j]+"  ");
@@ -121,7 +128,7 @@ public class NewtonNaoLinear {
             // passo 4
             // descubro xk
             // xk = x0 + s;
-            Matrix xk = new Matrix(x0,2);
+            Matrix xk = new Matrix(x0, x0.length);
             xk.plusEquals(s);
 
             System.out.println("\nxk: ");
@@ -160,7 +167,7 @@ public class NewtonNaoLinear {
                 j++;
 
                 sb1.append(J[i][j - 1]);
-                if(j < J[0].length)
+                if(j < J[i].length)
                     sb1.append(" + ");
             }
             // salvo as derivadas (expressao) de cada funcao

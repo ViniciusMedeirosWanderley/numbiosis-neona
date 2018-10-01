@@ -16,6 +16,8 @@ public class TelaSistemasActivity extends AppCompatActivity implements View.OnCl
         Button bt_spnatural = (Button) findViewById(R.id.SplineButton);
         bt_spnatural.setOnClickListener((View.OnClickListener ) this);
 
+        Button btn_newton = findViewById(R.id.NewtonButton);
+        btn_newton.setOnClickListener(this);
 
     }
 
@@ -25,6 +27,10 @@ public class TelaSistemasActivity extends AppCompatActivity implements View.OnCl
             case R.id.SplineButton:
                 Intent it3 = new Intent(this, Spline.class);
                 startActivity(it3);
+                break;
+            case R.id.NewtonButton:
+                Intent it = new Intent(this, NewtonNaoLinearActivity.class);
+                startActivity(it);
                 break;
         }
     }

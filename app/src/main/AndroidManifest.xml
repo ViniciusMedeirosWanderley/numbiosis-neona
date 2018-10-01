@@ -41,7 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".MenuActivity" />
         <activity android:name=".SobreActivity" />
         <activity
@@ -56,6 +55,10 @@
         <activity
             android:name=".HelpSpline"
             android:label="@string/titulo_spline" />
+        <activity
+            android:name=".NewtonNaoLinearActivity"
+            android:label="@string/titulo_newton_metodo" />
+        <activity android:name=".NewtonSolucaoActivity"></activity>
     </application>
 
 </manifest>
