@@ -94,8 +94,8 @@
     <string name="str_help_muller3">A cada iteração, é verificada se o valor obtido se encontra próximo da raíz através do erro estimado. Caso o erro seja maior, o
                                     cálculo continua, senão, é retornada a raiz.</string>
     <string name="str_help_spline1">Técnica de aproximação que consiste em dividir o intervalo de interesse em vários
-                                    subintervalos e interpolá-los, da forma mais suave possível, nestes subintervalos com polinômios
-                                    de grau menor. Na spline natural, considera-se que as derivadas de ordem 2 dos pontos inicial e final são iguais a 0.</string>
+                                    subintervalos e interpolá-los, com polinômios de grau menor. Na spline natural, considera-se que as derivadas de ordem 2
+                                    dos pontos inicial e final são iguais a 0.</string>
     <string name="str_help_spline2">Possui 8 parâmetros de entrada que são pontos da função com seus respectivos f(x) conhecidos.</string>
 
 

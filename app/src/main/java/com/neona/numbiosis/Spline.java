@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.neona.numbiosis.pacote2.SplineNatural;
 
@@ -40,37 +41,6 @@ public class Spline extends AppCompatActivity implements  View.OnClickListener {
         switch(view.getId()){
             case R.id.btn_calcular_spline://caso o click seja no botão calcular
 
-                if(x0.getText().toString().equals("")){
-                    x0.setText("0");
-                }
-                if(fx0.getText().toString().equals("")){
-                    fx0.setText("3");
-                }
-                if(x1.getText().toString().equals("")){
-                    x1.setText("0.5");
-                }
-                if(fx1.getText().toString().equals("")){
-                    fx1.setText("1.8616");
-                }
-                if(x2.getText().toString().equals("")){
-                    x2.setText("1.0");
-                }
-                if(fx2.getText().toString().equals("")){
-                    fx2.setText("-0.5571");
-                }
-                if(x3.getText().toString().equals("")){
-                    x3.setText("1.5");
-                }
-                if(fx3.getText().toString().equals("")){
-                    fx3.setText("-4.1987");
-                }
-                if(x4.getText().toString().equals("")){
-                    x4.setText("2.0");
-                }
-                if(fx4.getText().toString().equals("")){
-                    fx4.setText("-9.0536");
-                }
-
                 x0S = x0.getText().toString();   //capturamos o que foi digitado na caixa de texto de x0
                 fx0S = fx0.getText().toString();   //capturamos o que foi digitado na caixa de texto de fx0
                 x1S = x1.getText().toString();   //capturamos o que foi digitado na caixa de texto de x0
@@ -82,20 +52,73 @@ public class Spline extends AppCompatActivity implements  View.OnClickListener {
                 x4S = x4.getText().toString();   //capturamos o que foi digitado na caixa de texto de x0
                 fx4S = fx4.getText().toString();   //capturamos o que foi digitado na caixa de texto de fx0
 
+                if (x0S.isEmpty() || x1S.isEmpty() || x2S.isEmpty() || x3S.isEmpty() || x4S.isEmpty() || fx0S.isEmpty() || fx1S.isEmpty() || fx2S.isEmpty() || fx3S.isEmpty() || fx4S.isEmpty()){
+                    if (!x0S.isEmpty() || !x1S.isEmpty() || !x2S.isEmpty() || !x3S.isEmpty() || !x4S.isEmpty() || !fx0S.isEmpty() || !fx1S.isEmpty() || !fx2S.isEmpty() || !fx3S.isEmpty() || !fx4S.isEmpty()){
+                        Toast.makeText(getApplicationContext(),"Campos devem estar todos preenchidos.",Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                }
+
+                if(x0S.isEmpty()){
+                    x0.setText("0");
+                    x0S = "0";
+                }
+                if(fx0S.isEmpty()){
+                    fx0.setText("3");
+                    fx0S = "3";
+                }
+                if(x1S.isEmpty()){
+                    x1.setText("0.5");
+                    x1S = "0.5";
+                }
+                if(fx1S.isEmpty()){
+                    fx1.setText("1.8616");
+                    fx1S = "1.8616";
+                }
+                if(x2S.isEmpty()){
+                    x2.setText("1.0");
+                    x2S = "1.0";
+                }
+                if(fx2S.isEmpty()){
+                    fx2.setText("-0.5571");
+                    fx2S = "-0.5571";
+                }
+                if(x3S.isEmpty()){
+                    x3.setText("1.5");
+                    x3S = "1.5";
+                }
+                if(fx3S.isEmpty()){
+                    fx3.setText("-4.1987");
+                    fx3S = "-4.1987";
+                }
+                if(x4S.isEmpty()){
+                    x4.setText("2.0");
+                    x4S = "2.0";
+                }
+                if(fx4S.isEmpty()){
+                    fx4.setText("-9.0536");
+                    fx4S = "-9.0536";
+                }
+
                 float[] x = new float[5];
                 float[] y = new float[5];
                 float[] resultado;
 
-                x[0] = Float.parseFloat(x0S);
-                y[0] = Float.parseFloat(fx0S);
-                x[1] = Float.parseFloat(x1S);
-                y[1] = Float.parseFloat(fx1S);
-                x[2] = Float.parseFloat(x2S);
-                y[2] = Float.parseFloat(fx2S);
-                x[3] = Float.parseFloat(x3S);
-                y[3] = Float.parseFloat(fx3S);
-                x[4] = Float.parseFloat(x4S);
-                y[4] = Float.parseFloat(fx4S);
+                try{
+                    x[0] = Float.parseFloat(x0S);
+                    y[0] = Float.parseFloat(fx0S);
+                    x[1] = Float.parseFloat(x1S);
+                    y[1] = Float.parseFloat(fx1S);
+                    x[2] = Float.parseFloat(x2S);
+                    y[2] = Float.parseFloat(fx2S);
+                    x[3] = Float.parseFloat(x3S);
+                    y[3] = Float.parseFloat(fx3S);
+                    x[4] = Float.parseFloat(x4S);
+                    y[4] = Float.parseFloat(fx4S);
+                }catch(NumberFormatException ex){
+                    Toast.makeText(getApplicationContext(),"Campos com caracteres inválidos.",Toast.LENGTH_LONG).show();
+                    return;
+                }
 
                 SplineNatural sp = new SplineNatural();
                 resultado = sp.resolve(x, y);
