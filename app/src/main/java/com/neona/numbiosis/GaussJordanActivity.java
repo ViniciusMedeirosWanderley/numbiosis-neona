@@ -14,8 +14,7 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
     String[] matrizes;
     String[] dimensoesA;
     String[] dimensoesB;
-    int dA[];
-    int dB[];
+
     double matrizA[][];
     double matrizB[][];
 
@@ -53,16 +52,9 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                 dimensoesA = txt_dimensoesA.split("x");
                 dimensoesB = txt_dimensoesB.split("x");
 
-                for (int i = 0; i < dimensoesA.length; i++){
-                    dimensoesA[i] = dimensoesA[i].trim();
-                    dimensoesB[i] = dimensoesB[i].trim();
-                    //dA[i] = Integer.parseInt(dimensoesA[i]);
-                    //dB[i] = Integer.parseInt(dimensoesB[i]);
-                }
-
-                //System.out.print(dA);
-                //System.out.print(dB);
-
+                /*
+                    As dimensões estão como String
+                 */
 
                 if(txt_matrizes.equals(""))
                     txt_matrizes = "2 1 -1 5 2 2 3 1 1 \n1 -4 5";
@@ -72,7 +64,7 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     matrizes[i] = matrizes[i].trim();
                 }
 
-                //preciso pegar os valores das matrizes transformar para double
+                //TODO: precisa pegar os valores das matrizes transformar para double
 
                 matrizA = new double[][]{{2, 1, -1},
                                          {5, 2, 2},
