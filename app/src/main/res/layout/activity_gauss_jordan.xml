@@ -24,9 +24,9 @@
         android:id="@+id/textView_tamanho_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="24dp"
         android:text="@string/textView_tamanho_A_GJ"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -37,40 +37,14 @@
         android:id="@+id/editText_GJ_dimensoesA"
         android:layout_width="68dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/txt_hint_tamanho_A_GJ"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_tamanho_A" />
-
-    <TextView
-        android:id="@+id/textView_tamanho_B"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
-        android:text="@string/textView_tamanho_B_GJ"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editText_GJ_dimensoesB"
-        android:layout_width="69dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
-        android:ems="10"
-        android:hint="@string/txt_hint_tamanho_B"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_tamanho_B" />
 
     <EditText
         android:id="@+id/txt_matrizes"

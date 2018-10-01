@@ -15,8 +15,12 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
     String[] dimensoesA;
     String[] dimensoesB;
 
+    String ma[];
+    String mb[];
+
     double matrizA[][];
-    double matrizB[][];
+    double matrizB[];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,23 +42,28 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                 //capturar dimensões das matrizes nas caixas de texto
 
                 EditText editTextDimensoesA = findViewById(R.id.editText_GJ_dimensoesA);
-                EditText editTextDimensoesB = findViewById(R.id.editText_GJ_dimensoesB);
+
 
                 String txt_dimensoesA = editTextDimensoesA.getText().toString().trim();
-                String txt_dimensoesB = editTextDimensoesB.getText().toString().trim();
+
 
                 if(txt_dimensoesA.equals(""))
                     txt_dimensoesA = "3x3";
 
-                if(txt_dimensoesB.equals(""))
-                    txt_dimensoesB = "1x3";
+
 
                 dimensoesA = txt_dimensoesA.split("x");
-                dimensoesB = txt_dimensoesB.split("x");
+
 
                 /*
                     As dimensões estão como String
                  */
+
+                int linhaA = Integer.parseInt(dimensoesA[0]);
+                int colunaA = Integer.parseInt(dimensoesA[1]);
+
+
+
 
                 if(txt_matrizes.equals(""))
                     txt_matrizes = "2 1 -1 5 2 2 3 1 1 \n1 -4 5";
@@ -64,16 +73,40 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     matrizes[i] = matrizes[i].trim();
                 }
 
+                ma = new String[linhaA*colunaA];
+                ma = matrizes[0].split(" ");
+
+                matrizA = new double[linhaA][colunaA] ;
+
+                for(int i = 0,j = 0, a; i < ma.length ; i++){
+
+                    if(i != 0 && (i%linhaA)==0){
+                        j++;
+                    }
+
+                    a = i % colunaA;
+
+                    matrizA[j][a] = Double.parseDouble(ma[i]);
+
+                }
+
+                mb = new String[linhaA];
+                mb = matrizes[1].split(" ");
+
+                matrizB = new double[linhaA];
+
+                for(int i = 0; i < mb.length ; i++){
+
+                    matrizB[i] = Double.parseDouble(mb[i]);
+
+                }
+
+
                 //TODO: precisa pegar os valores das matrizes transformar para double
 
-                matrizA = new double[][]{{2, 1, -1},
-                                         {5, 2, 2},
-                                         {3, 1, 1}};
-
-                matrizB = new double[][] {{1},{-4},{5}};
 
                 Matrix A = new Matrix(matrizA);
-                Matrix B = new Matrix(matrizB);
+                Matrix B = new Matrix(matrizB,linhaA);
 
                 //acha a solucao
                 com.neona.numbiosis.pacote2.GaussJordan gj = new com.neona.numbiosis.pacote2.GaussJordan(A, B);
@@ -86,12 +119,12 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
 
                 //tela de solucao
                 Intent it = new Intent(this, GaussJordanSolucaoActivity.class);
-                //it.putExtra("solucao", raiz); ENVIA PARA A TELA DA SOLUCAO
-                //it.putExtra("sistema", txtSistema);
+                it.putExtra("solucao", B);
+                it.putExtra("linhaA" , linhaA);
                 startActivity(it);
                 break;
-
 
         }
     }
 }
+
