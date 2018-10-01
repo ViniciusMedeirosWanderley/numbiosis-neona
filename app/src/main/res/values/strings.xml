@@ -94,8 +94,8 @@
     <string name="str_help_muller3">A cada iteração, é verificada se o valor obtido se encontra próximo da raíz através do erro estimado. Caso o erro seja maior, o
                                     cálculo continua, senão, é retornada a raiz.</string>
     <string name="str_help_spline1">Técnica de aproximação que consiste em dividir o intervalo de interesse em vários
-                                    subintervalos e interpolá-los, da forma mais suave possível, nestes subintervalos com polinômios
-                                    de grau menor. Na spline natural, considera-se que as derivadas de ordem 2 dos pontos inicial e final são iguais a 0.</string>
+                                    subintervalos e interpolá-los, com polinômios de grau menor. Na spline natural, considera-se que as derivadas de ordem 2
+                                    dos pontos inicial e final são iguais a 0.</string>
     <string name="str_help_spline2">Possui 8 parâmetros de entrada que são pontos da função com seus respectivos f(x) conhecidos.</string>
 
 
@@ -130,6 +130,11 @@
     <string name="editText_false_Tol">Tol</string>
     <string name="editText_false_X">X</string>
     <string name="String_false_N">N</string>
+    <string name="btn_GJ_calcular">Calcular</string>
+    <string name="textView_tamanho_A_GJ">Matriz A</string>
+    <string name="txt_hint_tamanho_A_GJ">3x3</string>
+    <string name="textView_tamanho_B_GJ">Matriz B</string>
+    <string name="txt_hint_tamanho_B">1x3</string>
     <string name="titulo_newton_metodo">Método de Newton</string>
 
 </resources>

@@ -19,6 +19,9 @@ public class TelaSistemasActivity extends AppCompatActivity implements View.OnCl
         Button btn_newton = findViewById(R.id.NewtonButton);
         btn_newton.setOnClickListener(this);
 
+        Button bt_gaussjordan = (Button) findViewById(R.id.GJButton);
+        bt_gaussjordan.setOnClickListener((View.OnClickListener ) this);
+
     }
 
     @Override
@@ -31,6 +34,11 @@ public class TelaSistemasActivity extends AppCompatActivity implements View.OnCl
             case R.id.NewtonButton:
                 Intent it = new Intent(this, NewtonNaoLinearActivity.class);
                 startActivity(it);
+                break;
+
+            case R.id.GJButton:
+                Intent it4 = new Intent(this, GaussJordan.class);
+                startActivity(it4);
                 break;
         }
     }
