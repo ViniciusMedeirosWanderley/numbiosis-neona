@@ -130,5 +130,10 @@
     <string name="editText_false_Tol">Tol</string>
     <string name="editText_false_X">X</string>
     <string name="String_false_N">N</string>
+    <string name="btn_GJ_calcular">Calcular</string>
+    <string name="textView_tamanho_A_GJ">Matriz A</string>
+    <string name="txt_hint_tamanho_A_GJ">3x3</string>
+    <string name="textView_tamanho_B_GJ">Matriz B</string>
+    <string name="txt_hint_tamanho_B">1x3</string>
 
 </resources>

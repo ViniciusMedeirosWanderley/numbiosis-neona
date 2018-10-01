@@ -16,6 +16,8 @@ public class TelaSistemasActivity extends AppCompatActivity implements View.OnCl
         Button bt_spnatural = (Button) findViewById(R.id.SplineButton);
         bt_spnatural.setOnClickListener((View.OnClickListener ) this);
 
+        Button bt_gaussjordan = (Button) findViewById(R.id.GJButton);
+        bt_gaussjordan.setOnClickListener((View.OnClickListener ) this);
 
     }
 
@@ -25,6 +27,11 @@ public class TelaSistemasActivity extends AppCompatActivity implements View.OnCl
             case R.id.SplineButton:
                 Intent it3 = new Intent(this, Spline.class);
                 startActivity(it3);
+                break;
+
+            case R.id.GJButton:
+                Intent it4 = new Intent(this, GaussJordan.class);
+                startActivity(it4);
                 break;
         }
     }
