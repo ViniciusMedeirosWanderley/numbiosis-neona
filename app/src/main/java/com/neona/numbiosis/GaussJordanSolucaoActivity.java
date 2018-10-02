@@ -12,18 +12,18 @@ public class GaussJordanSolucaoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gauss_jordan_solucao);
 
         //recebe os parametros enviados pela tela do Gauss Jordan
+
         Intent it = getIntent();
-        Matrix solucao = it.clone();
+        double[] solucao = it.getDoubleArrayExtra("solucao");
 
-        System.out.println(solucao);
+        TextView textSistema = findViewById(R.id.text_solução_GJ);
 
-
-        //TextView textSistema = findViewById(R.id.text_solução_GJ);
-        //textSistema.setText(solucao.toString());
-
-
-
-
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0;  i< solucao.length; i++){
+            sb.append(Double.toString(solucao[i]));
+            sb.append("\n");
+        }
+        textSistema.setText(sb.toString());
 
     }
 }
