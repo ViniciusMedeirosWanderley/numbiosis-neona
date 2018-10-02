@@ -1,6 +1,7 @@
 package com.neona.numbiosis;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +30,9 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
 
         Button btn_resolver = findViewById(R.id.buttonResolver);
         btn_resolver.setOnClickListener(this);
+
+        Button btn_help = findViewById(R.id.btn_help_newton);
+        btn_help.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +66,7 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
                         x0[i] = Double.parseDouble(sX0[i]);
                     }catch (NumberFormatException ex){
                         Toast.makeText(getApplicationContext(),"Erro com suas estimativas iniciais.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
+                        return;
                     }
                 }
 
@@ -78,6 +83,7 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
                         erro[i] = Double.parseDouble(sErro[i]);
                     }catch (NumberFormatException ex){
                         Toast.makeText(getApplicationContext(),"Erro com seu valor de tolerancia minima.\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
+                        return;
                     }
                 }
 
@@ -87,14 +93,21 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
                 NewtonNaoLinear nt = new NewtonNaoLinear(funcoes, variaveis, x0, erro[0], erro[1]);
 
                 // acha a solucao
-                double[] raiz = nt.resolve();
+                double[] raiz;
+                try {
+                    raiz = nt.resolve();
+                }catch (Exception ex){
+                    Toast.makeText(getApplicationContext(),"Ocorreu um erro durante o cálculo.\nVerifique se o sistema está correto.", Toast.LENGTH_LONG).show();
+                    //Log.d("error", );
+                    ex.printStackTrace();
+                    return;
+                }
 
                 NumberFormat nf = NumberFormat.getInstance();
                 nf.setMaximumFractionDigits(10);
                 System.out.println("Soluçao:");
                 for (double r:raiz) {
                     System.out.println(nf.format(r));
-                    //System.out.println(r);
                 }
 
                 // chamo a tela de solucao
@@ -102,6 +115,9 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
                 it.putExtra("solucao", raiz);
                 it.putExtra("sistema", txtSistema);
                 startActivity(it);
+                break;
+            case R.id.btn_help_newton:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=jO-P1RgFziU")));
                 break;
         }
     }

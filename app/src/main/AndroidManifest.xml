@@ -62,7 +62,9 @@
         <activity
             android:name=".NewtonNaoLinearActivity"
             android:label="@string/titulo_newton_metodo" />
-        <activity android:name=".NewtonSolucaoActivity"></activity>
+        <activity
+            android:name=".NewtonSolucaoActivity"
+            android:label="@string/titulo_newton_metodo"/>
     </application>
 
 </manifest>

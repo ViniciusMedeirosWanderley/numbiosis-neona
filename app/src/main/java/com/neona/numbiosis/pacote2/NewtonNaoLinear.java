@@ -159,7 +159,25 @@ public class NewtonNaoLinear {
 
             // crio a matriz Jacobiana
             j = 0;
-            for (String var : variaveis[i]) {
+            for (double d: x0) {
+                String var;
+                switch (j){
+                    case 0:
+                        var = "x";
+                        break;
+                    case 1:
+                        var = "y";
+                        break;
+                    case 2:
+                        var = "z";
+                        break;
+                    case 3:
+                        var = "w";
+                        break;
+                    default:
+                        var = "x";
+                }
+
                 StringBuilder sb = new StringBuilder();
                 sb.append("der(".concat(funcoes[i]));
                 sb.append(",").append(var).append(")");
@@ -170,6 +188,7 @@ public class NewtonNaoLinear {
                 if(j < J[i].length)
                     sb1.append(" + ");
             }
+
             // salvo as derivadas (expressao) de cada funcao
             gradientes[i] = sb1.toString();
             System.out.println(gradientes[i]);
