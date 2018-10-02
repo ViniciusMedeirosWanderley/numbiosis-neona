@@ -18,9 +18,13 @@ public class SplineNatural {
         //float[] y = {1.3, 1.5, 1.85, 2.1, 2.6, 2.7, 2.4, 2.15, 2.05, 2.1, 2.25};
 
         int n = x.length - 1;
+
+        if(n < 2)
+            throw new IllegalArgumentException("Quantidade minima de pontos deve ser 3.");
+
         float[] h = new float[n+1];
         float[] alfa = new float[n+1]; //Vetor para armazenar os valores das 2ª derivadas.
-        float[] resultado = new float[12]; //Armazena os coeficientes, a1, a2, a3, b1, b2, b3, c1, c2, c3, d1, d2, d3
+        float[] resultado = new float[4*(n-1)]; //Armazena os coeficientes, a1, a2, a3, b1, b2, b3, c1, c2, c3, d1, d2, d3
 
         //Calculando os Delta x's.
         for (int i = 0; i <= n-1; i++) {
@@ -70,11 +74,12 @@ public class SplineNatural {
             a1[i+1] = a[i];
         }
 
-        for (int i = 0; i < 3; i++) {
+        int t = n-1;
+        for (int i = 0; i < t; i++) {
             resultado[i] = a1[i+1];
-            resultado[i+3] = b[i+1];
-            resultado[i+6] = c[i+1];
-            resultado[i+9] = y[i+1];
+            resultado[i+t] = b[i+1];
+            resultado[i+2*t] = c[i+1];
+            resultado[i+3*t] = y[i+1];
         }
 
 
