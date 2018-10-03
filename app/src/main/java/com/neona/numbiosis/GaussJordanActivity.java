@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import Jama.Matrix;
 
 public class GaussJordanActivity extends AppCompatActivity implements  View.OnClickListener{
@@ -38,6 +40,7 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.GJ_botao_calcular:
+
                 try{
 
                     EditText editTextDimensoesA = findViewById(R.id.editText_GJ_dimensoesA);
@@ -59,18 +62,13 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     int colunaA = Integer.parseInt(dimensoesA[1]);
 
                     if(txt_matrizA.equals(""))
-                        txt_matrizA = "2 1 -1\n5 2 2 \n3 1 1";
+                        txt_matrizA = "2 1 -1\n5 2 2\n3 1 1";
 
                     //separa a matrizA em linhas
-                    linhasA = txt_matrizA.split("\\n+");
-                    for (int i = 0; i < linhasA.length; i++){
-                        linhasA[i] = linhasA[i].trim();
-                    }
-
-                    //TODO: Fazer a matriz A a partir das linhas capturadas anteriormente
+                    txt_matrizA.replaceAll("\n"," ");
 
                     ma = new String[linhaA*colunaA];
-                    ma = linhasA[0].split(" ");
+                    ma = txt_matrizA.split("\\s+");
 
                     matrizA = new double[linhaA][colunaA] ;
 
@@ -84,6 +82,10 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
 
                         matrizA[j][a] = Double.parseDouble(ma[i]);
 
+                    }
+
+                    if(txt_matrizB.equals("")){
+                        txt_matrizB = "1 -4 5";
                     }
 
                     //capturamos o que o usuario colocou nas linhas(matrizB) e transformamos na matriz B
@@ -124,12 +126,9 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     startActivity(it);
                     break;
 
-                }catch (NumberFormatException ex){
+                }catch (Exception e){
                     Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
-                }catch (ArrayIndexOutOfBoundsException ar){
-                    Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
-                }catch (ArithmeticException ue){
-                    Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
+
                 }
         }
 
