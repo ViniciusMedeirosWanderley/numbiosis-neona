@@ -1,6 +1,7 @@
 package com.neona.numbiosis;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import Jama.Matrix;
 
@@ -33,7 +36,8 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
         Button calcular = (Button) findViewById(R.id.GJ_botao_calcular); //instanciamos o botão da tela
         calcular.setOnClickListener((View.OnClickListener) this); //colocamos ele pra ser "escutado"
 
-
+        Button btn_help = findViewById(R.id.btn_help_gauss_jordan);
+        btn_help.setOnClickListener(this);
     }
 
     @Override
@@ -102,6 +106,9 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
 
                     }
 
+                    String sistema = matrizToString(matrizA);
+                    String vetorB = vetorToString(matrizB);
+
                     Matrix A = new Matrix(matrizA);
                     Matrix B = new Matrix(matrizB,linhaA);
 
@@ -123,6 +130,8 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     //tela de solucao
                     Intent it = new Intent(this, GaussJordanSolucaoActivity.class);
                     it.putExtra("solucao",matriz);
+                    it.putExtra("A",sistema);
+                    it.putExtra("B",vetorB);
                     startActivity(it);
                     break;
 
@@ -131,8 +140,38 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
                 }
+            case R.id.btn_help_gauss_jordan:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=C3Tpj2BS46I")));
+                break;
         }
 
+    }
+
+    private String matrizToString(double[][] ar){
+        NumberFormat nf = DecimalFormat.getInstance();
+        nf.setMaximumFractionDigits(6);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < ar.length; i++) {
+            for (int j = 0; j < ar[0].length; j++) {
+                //sb.append(ar[i][j]+"  ");
+                sb.append(String.format("%1$2s", nf.format(ar[i][j])));
+                sb.append("  ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    private String vetorToString(double[] ar){
+        NumberFormat nf = DecimalFormat.getInstance();
+        nf.setMaximumFractionDigits(6);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < ar.length; i++) {
+            //sb.append(ar[i]+" ");
+            sb.append(nf.format(ar[i]));
+            sb.append(" ");
+        }
+        return sb.toString();
     }
 }
 

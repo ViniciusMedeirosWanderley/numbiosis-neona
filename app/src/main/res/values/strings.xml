@@ -133,7 +133,7 @@
     <string name="btn_GJ_calcular">Calcular</string>
     <string name="textView_tamanho_A_GJ">Matriz A</string>
     <string name="txt_hint_tamanho_A_GJ">3x3</string>
-    <string name="textView_tamanho_B_GJ">Matriz B</string>
+    <string name="textView_tamanho_B_GJ">Vetor B</string>
     <string name="txt_hint_tamanho_B">1x3</string>
     <string name="titulo_newton_metodo">Método de Newton</string>
 

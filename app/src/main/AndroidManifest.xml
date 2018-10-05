@@ -55,7 +55,7 @@
 
         <activity
             android:name=".GaussJordanActivity"
-            android:label="Metodo de Gauss-Jordan" />
+            android:label="Método de Gauss-Jordan" />
 
         <activity
             android:name="GaussJordanSolucaoActivity"

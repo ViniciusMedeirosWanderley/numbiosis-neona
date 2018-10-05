@@ -137,7 +137,7 @@ public class Spline extends AppCompatActivity implements  View.OnClickListener {
                             y[cont] = Float.parseFloat(fx0S);
                             cont++;
                         }else{
-                            Toast.makeText(getApplicationContext(),"Campos f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Campo f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
                             return;
                         }
                     }
@@ -148,7 +148,7 @@ public class Spline extends AppCompatActivity implements  View.OnClickListener {
                             y[cont] = Float.parseFloat(fx1S);
                             cont++;
                         }else{
-                            Toast.makeText(getApplicationContext(),"Campos f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Campo f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
                             return;
                         }
                     }
@@ -159,7 +159,7 @@ public class Spline extends AppCompatActivity implements  View.OnClickListener {
                             y[cont] = Float.parseFloat(fx2S);
                             cont++;
                         }else{
-                            Toast.makeText(getApplicationContext(),"Campos f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Campo f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
                             return;
                         }
                     }
@@ -170,7 +170,7 @@ public class Spline extends AppCompatActivity implements  View.OnClickListener {
                             y[cont] = Float.parseFloat(fx3S);
                             cont++;
                         }else{
-                            Toast.makeText(getApplicationContext(),"Campos f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Campo f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
                             return;
                         }
                     }
@@ -181,7 +181,7 @@ public class Spline extends AppCompatActivity implements  View.OnClickListener {
                             y[cont] = Float.parseFloat(fx4S);
                             cont++;
                         }else{
-                            Toast.makeText(getApplicationContext(),"Campos f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Campo f(x) deve ser preenchido.",Toast.LENGTH_LONG).show();
                             return;
                         }
                     }
