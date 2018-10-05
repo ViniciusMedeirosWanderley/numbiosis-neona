@@ -8,13 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import Jama.Matrix;
 
 public class GaussJordanActivity extends AppCompatActivity implements  View.OnClickListener{
 
-    String[] matrizes;
+    String[] linhasA;
+    String[] linhasB;
     String[] dimensoesA;
-    String[] dimensoesB;
 
     String ma[];
     String mb[];
@@ -31,40 +33,42 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
         Button calcular = (Button) findViewById(R.id.GJ_botao_calcular); //instanciamos o botão da tela
         calcular.setOnClickListener((View.OnClickListener) this); //colocamos ele pra ser "escutado"
 
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.GJ_botao_calcular:
+
                 try{
-                    EditText editTextMatrizes = findViewById(R.id.txt_matrizes);
-                    String txt_matrizes = editTextMatrizes.getText().toString().trim();
 
                     EditText editTextDimensoesA = findViewById(R.id.editText_GJ_dimensoesA);
-
                     String txt_dimensoesA = editTextDimensoesA.getText().toString().trim();
+
+                    EditText editTextMatrizes = findViewById(R.id.txt_matrizA_GJ);
+                    String txt_matrizA = editTextMatrizes.getText().toString().trim();
+
+                    EditText editTextMatrizB = findViewById(R.id.editText_matrizB_GJ);
+                    String txt_matrizB = editTextMatrizB.getText().toString().trim();
 
                     if(txt_dimensoesA.equals(""))
                         txt_dimensoesA = "3x3";
 
+                    //futuramente podemos melhorar essa recepcao das dimensoes de A
                     dimensoesA = txt_dimensoesA.split("x");
 
+                    int linhaA = Integer.parseInt(dimensoesA[0].trim());
+                    int colunaA = Integer.parseInt(dimensoesA[1].trim());
 
-                    int linhaA = Integer.parseInt(dimensoesA[0]);
-                    int colunaA = Integer.parseInt(dimensoesA[1]);
+                    if(txt_matrizA.equals(""))
+                        txt_matrizA = "2 1 -1\n5 2 2\n3 1 1";
 
-
-                    if(txt_matrizes.equals(""))
-                        txt_matrizes = "2 1 -1 5 2 2 3 1 1 \n1 -4 5";
-
-                    matrizes = txt_matrizes.split("\\n+");
-                    for (int i = 0; i < matrizes.length; i++){
-                        matrizes[i] = matrizes[i].trim();
-                    }
+                    //separa a matrizA em linhas
+                    txt_matrizA.replaceAll("\n"," ");
 
                     ma = new String[linhaA*colunaA];
-                    ma = matrizes[0].split(" ");
+                    ma = txt_matrizA.split("\\s+");
 
                     matrizA = new double[linhaA][colunaA] ;
 
@@ -80,14 +84,21 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
 
                     }
 
-                    mb = new String[linhaA];
-                    mb = matrizes[1].split(" ");
+                    if(txt_matrizB.equals("")){
+                        txt_matrizB = "1 -4 5";
+                    }
+
+                    //capturamos o que o usuario colocou nas linhas(matrizB) e transformamos na matriz B
+                    linhasB = txt_matrizB.split("\\s+");
+                    for (int i = 0; i < linhasB.length; i++){
+                        linhasB[i] = linhasB[i].trim();
+                    }
 
                     matrizB = new double[linhaA];
 
-                    for(int i = 0; i < mb.length ; i++){
+                    for(int i = 0; i < linhasB.length ; i++){
 
-                        matrizB[i] = Double.parseDouble(mb[i]);
+                        matrizB[i] = Double.parseDouble(linhasB[i]);
 
                     }
 
@@ -115,11 +126,9 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     startActivity(it);
                     break;
 
-                }catch (NumberFormatException ex){
-                    Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
-                }catch (ArrayIndexOutOfBoundsException ar){
-                    Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
-                }catch (ArithmeticException ue){
+                }catch (ArithmeticException e){
+                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }catch (Exception e){
                     Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
                 }
         }

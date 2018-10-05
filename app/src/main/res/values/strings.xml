@@ -58,7 +58,7 @@
     <string name="edittext_hint_fx4_spline">f(x4)</string>
     <string name="txt_Pontos_da_funcao">Pontos da Função</string>
     <string name="btn_BuscarEquacoes">Buscar Equações</string>
-    <string name="Equacoes_Polinomiais">Equacoes Polinomiais</string>
+    <string name="Equacoes_Polinomiais">Equações Polinomiais</string>
 
     <!-- TelaInicialActivity -->
     <string name="telaInicial">Escolha o Método</string>

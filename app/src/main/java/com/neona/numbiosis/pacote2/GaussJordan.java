@@ -32,7 +32,7 @@ public class GaussJordan {
     }
 
     // Sem pivoteamento, pode ocorrer divisao por zero
-    public void resolve(){
+    public void resolve(){ //resolveComPivoteamento();return;
         int m = A.getRowDimension();
         int n = A.getColumnDimension();
 
@@ -47,6 +47,9 @@ public class GaussJordan {
 
         //linha
         for (int i = 0; i < m; i++) {
+
+            pivoteamento(i);
+
             pivo(i,i);
             System.out.println("Iteracao "+(i+1));
             A.print(6, 2);
@@ -79,6 +82,30 @@ public class GaussJordan {
             // atualizo matriz B
             b[i][0] -= alpha * b[p_lin][0];
         }
+    }
+
+
+    private void pivoteamento(int linha){
+        int i = linha;
+        // acho o maior para fazer pivoteamento
+        int maior = i;
+        for (int j = i+1; j < N_COLUNAS; j++) {
+            if(Math.abs(a[i][i]) < Math.abs(a[i][j]))
+                maior = j;
+        }
+        if(i != maior)
+            troca(i,maior);
+    }
+
+    // troca linhas (A e B)
+    private void troca(int linha1, int linha2) {
+        double[] temp = a[linha1];
+        a[linha1] = a[linha2];
+        a[linha2] = temp;
+
+        temp = b[linha1];
+        b[linha1] = b[linha2];
+        b[linha2] = temp;
     }
 
 }

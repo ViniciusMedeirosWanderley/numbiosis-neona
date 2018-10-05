@@ -55,11 +55,11 @@
 
         <activity
             android:name=".GaussJordanActivity"
-            android:label="Metodo do Gauss Jordan" />
+            android:label="Metodo de Gauss-Jordan" />
 
         <activity
             android:name="GaussJordanSolucaoActivity"
-            android:label="Solucão do Gauss Jordan" />
+            android:label="Método de Gauss-Jordan" />
 
         <activity
             android:name=".HelpSpline"
