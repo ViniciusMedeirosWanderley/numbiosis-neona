@@ -3,6 +3,7 @@
 
     <!-- Genericos -->
     <string name="funcao">Função</string>
+    <string name="funcoes">Funções</string>
     <string name="txt_EstimativasIniciais">Estimativas Iniciais</string>
     <string name="txt_Estimativas_A">A</string>
     <string name="txt_Estimativas_B">B</string>

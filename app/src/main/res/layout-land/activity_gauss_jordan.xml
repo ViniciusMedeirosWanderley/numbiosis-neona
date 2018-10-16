@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/textView_tamanho_B2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="115dp"
+        android:layout_marginRight="115dp"
+        android:layout_marginTop="63dp"
+        android:text="@string/textView_tamanho_B_GJ"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/GJ_botao_calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="99dp"
+        android:layout_marginRight="99dp"
+        android:layout_marginTop="63dp"
+        android:text="Resolver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_matrizB_GJ" />
+
+    <TextView
+        android:id="@+id/textView_tamanho_A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="147dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/textView_tamanho_A_GJ"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Ax_B" />
+
+    <EditText
+        android:id="@+id/editText_GJ_dimensoesA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="8dp"
+        android:digits="123456789x"
+        android:ems="10"
+        android:hint="@string/txt_hint_tamanho_A_GJ"
+        android:inputType="textPersonName|textFilter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_tamanho_A" />
+
+    <EditText
+        android:id="@+id/txt_matrizA_GJ"
+        android:layout_width="214dp"
+        android:layout_height="131dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:cursorVisible="true"
+        android:digits="0123456789.-+ \n"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="2 1 -1\n5 2 2\n3 1 1 "
+        android:inputType="textMultiLine|numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_GJ_dimensoesA" />
+
+    <EditText
+        android:id="@+id/editText_matrizB_GJ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="8dp"
+        android:digits="0123456789+-.e "
+        android:ems="10"
+        android:hint="1 -4 5"
+        android:inputType="textFilter|numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_tamanho_B2" />
+
+    <TextView
+        android:id="@+id/textView_Ax_B"
+        android:layout_width="81dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="143dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="16dp"
+        android:text="A\u22C5x = B"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_help_gauss-jordan"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/help"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
