@@ -15,22 +15,85 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backgroundapplanded" />
 
-    <CheckedTextView
-        android:id="@+id/Texto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoLink="web"
-        android:paddingLeft="8dp"
-        android:paddingRight="10dp"
-        android:paddingTop="18dp"
-        android:text="@string/textSobre"
-        android:textAlignment="gravity"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@android:color/background_light"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <CheckedTextView
+                android:id="@+id/Texto"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:autoLink="web"
+                android:paddingLeft="8dp"
+                android:paddingTop="18dp"
+                android:paddingRight="10dp"
+                android:text="@string/textSobre"
+                android:textAlignment="gravity"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@android:color/background_light"
+                android:textColorLink="#FFFFFF"
+                android:textSize="18sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <Button
+                android:id="@+id/numbiosis_button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="207dp"
+                android:layout_height="91dp"
+                android:background="@drawable/numbiosis"
+                tools:layout_editor_absoluteX="210dp"
+                tools:layout_editor_absoluteY="176dp" />
+
+            <CheckedTextView
+                android:id="@+id/Texto2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/textSobre2"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="283dp" />
+
+            <Button
+                android:id="@+id/numis_button"
+                android:layout_width="207dp"
+                android:layout_height="127dp"
+                android:background="@drawable/numis2"
+                android:lineSpacingExtra="8sp"
+                tools:layout_editor_absoluteX="251dp"
+                tools:layout_editor_absoluteY="275dp" />
+
+            <TextView
+                android:id="@+id/only_space"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                tools:layout_editor_absoluteX="266dp"
+                tools:layout_editor_absoluteY="269dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

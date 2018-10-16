@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Button3" />
+        app:layout_constraintTop_toBottomOf="@+id/QuadraturaButton" />
 
     <Button
         android:id="@+id/SistemasButton"
@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/RaizButton" />
 
     <Button
-        android:id="@+id/Button3"
+        android:id="@+id/QuadraturaButton"
         android:layout_width="196dp"
         android:layout_height="70dp"
         android:layout_marginEnd="8dp"
@@ -90,8 +90,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
-        android:enabled="false"
-        android:text="Pacote 3"
+        android:enabled="true"
+        android:text="@string/quadratura"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

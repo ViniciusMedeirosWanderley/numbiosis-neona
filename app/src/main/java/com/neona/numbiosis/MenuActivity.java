@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+
 public class MenuActivity extends AppCompatActivity implements  View.OnClickListener {
 
 
@@ -30,6 +31,9 @@ public class MenuActivity extends AppCompatActivity implements  View.OnClickList
         Button bt_sobre = (Button) findViewById(R.id.SobreButton);
         bt_sobre.setOnClickListener((View.OnClickListener ) this);
 
+        Button bt_quad = findViewById(R.id.QuadraturaButton);
+        bt_quad.setOnClickListener(this);
+
     }
 
 
@@ -47,6 +51,10 @@ public class MenuActivity extends AppCompatActivity implements  View.OnClickList
             case R.id.SobreButton:
                 Intent it3 = new Intent(this, SobreActivity.class);
                 startActivity(it3);
+                break;
+            case R.id.QuadraturaButton:
+                Intent it4 = new Intent(this, QuadGaussActivity.class);
+                startActivity(it4);
                 break;
         }
     }

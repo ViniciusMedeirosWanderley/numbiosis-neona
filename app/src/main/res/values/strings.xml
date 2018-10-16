@@ -44,6 +44,21 @@
     <!-- Spline Natural -->
     <string name="titulo_spline">Método do Spline Natural</string>
     <string name="spline">Spline Natural</string>
+    <string name="textView_função_spline">F(x)</string>
+    <string name="textView_x_spline">x</string>
+    <string name="edittext_hint_x0_spline">x0</string>
+    <string name="edittext_hint_fx0_spline">f(x0)</string>
+    <string name="edittext_hint_x1_spline">x1</string>
+    <string name="edittext_hint_fx1_spline">f(x1)</string>
+    <string name="edittext_hint_x2_spline">x2</string>
+    <string name="edittext_hint_fx2_spline">f(x2)</string>
+    <string name="edittext_hint_x3_spline">x3</string>
+    <string name="edittext_hint_fx3_spline">f(x3)</string>
+    <string name="edittext_hint_x4_spline">x4</string>
+    <string name="edittext_hint_fx4_spline">f(x4)</string>
+    <string name="txt_Pontos_da_funcao">Pontos da Função</string>
+    <string name="btn_BuscarEquacoes">Buscar Equações</string>
+    <string name="Equacoes_Polinomiais">Equações Polinomiais</string>
 
     <!-- TelaInicialActivity -->
     <string name="telaInicial">Escolha o Método</string>
@@ -51,12 +66,15 @@
     <!-- MenuActivity  -->
     <string name="raiz">Cálculo de Raízes</string>
     <string name="sistemas">Resolução de Sistemas</string>
+    <string name="quadratura">Quadratura Gaussiana</string>
     <string name="about">Sobre</string>
 
     <!-- Sobre  -->
     <string name="textSobre">O aplicativo <b>Métodos Numéricos</b> foi produzido por alunos do Centro de Informática da Universidade Federal da Paraíba (UFPB)
                               visando contribuir com o projeto <b>Numbiosis</b>, desenvolvido pelo Prof. Gustavo Oliveira.
-                                \n\nPara mais informações sobre o projeto, acesse o link:\n\n<font><b>http://numbiosis.ci.ufpb.br</b></font></string>
+                                \n\nPara mais informações sobre o projeto, acesse o link:</string>
+
+    <string name="textSobre2">Link para o simulador interativo do aluno <b>Vinícius Matheus</b> (aluno de Engenharia da Computação da UFPB)</string>
 
     <!-- Help -->
     <string name="titulo_help_secante">Método das Secantes</string>
@@ -64,11 +82,11 @@
     <string name="titulo_help_muller">Método de Muller</string>
     <string name="descricao">Descrição:</string>
     <string name="parametros">Parâmetros:</string>
-    <string name="str_help_secante1">Método aberto utilizado para encontrar raízes de maneira aproximada através de secantes que intersectam a função.</string>
+    <string name="str_help_secante1">Método aberto utilizado para encontrar raízes de maneira aproximada através de secantes que intersetam a função.</string>
     <string name="str_help_secante2">Possui 2 parâmetros, A e B, que são valores iniciais para o cálculo iterativo da função.</string>
     <string name="str_help_secante3">A cada nova iteração, um novo x é calculado, verificando se está próximo da raíz da função. Caso esteja dentro do limite
                                      tolerável, o método retorna o valor encontrado, senão, a iteração continua até que atinja o limite de iterações imposto.</string>
-    <string name="str_help_falsa_posicao1">Método intervalar utilizado para encontrar raízes de maneira aproximada através de retas secantes cuja a intersecção
+    <string name="str_help_falsa_posicao1">Método intervalar utilizado para encontrar raízes de maneira aproximada através de retas secantes cuja a interseção
                                            com o eixo-x está mais próximo da raíz.</string>
     <string name="str_help_falsa_posicao2">Os parâmetros A e B são os limites do intervalo no qual a raíz se encontra.</string>
     <string name="str_help_falsa_posicao3">A cada iteração, é verificado se o valor econtrado está próximo da raíz utilizando o erro estipulado, caso contrário,
@@ -78,6 +96,10 @@
     <string name="str_help_muller2">Possui 3 parâmetros A, B e C, que são usados para a construção da parábola.</string>
     <string name="str_help_muller3">A cada iteração, é verificada se o valor obtido se encontra próximo da raíz através do erro estimado. Caso o erro seja maior, o
                                     cálculo continua, senão, é retornada a raiz.</string>
+    <string name="str_help_spline1">Técnica de aproximação que consiste em dividir o intervalo de interesse em vários
+                                    subintervalos e interpolá-los, com polinômios de grau menor. Na spline natural, considera-se que as derivadas de ordem 2
+                                    dos pontos inicial e final são iguais a 0.</string>
+    <string name="str_help_spline2">Possui 8 parâmetros de entrada que são pontos da função com seus respectivos f(x) conhecidos.</string>
 
 
     <string name="textView_x0_muller">x0</string>
@@ -111,5 +133,11 @@
     <string name="editText_false_Tol">Tol</string>
     <string name="editText_false_X">X</string>
     <string name="String_false_N">N</string>
+    <string name="btn_GJ_calcular">Calcular</string>
+    <string name="textView_tamanho_A_GJ">Matriz A</string>
+    <string name="txt_hint_tamanho_A_GJ">3x3</string>
+    <string name="textView_tamanho_B_GJ">Vetor B</string>
+    <string name="txt_hint_tamanho_B">1x3</string>
+    <string name="titulo_newton_metodo">Método de Newton</string>
 
 </resources>

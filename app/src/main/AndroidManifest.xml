@@ -41,12 +41,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".MenuActivity" />
         <activity android:name=".SobreActivity" />
         <activity
             android:name=".TelaSistemasActivity"
             android:label="@string/telaInicial" />
+        <activity
+            android:name=".Spline"
+            android:label="@string/titulo_spline" />
+        <activity
+            android:name=".EquacoesSpline"
+            android:label="@string/Equacoes_Polinomiais" />
+        <activity
+            android:name=".GaussJordanActivity"
+            android:label="Método de Gauss-Jordan" />
+        <activity
+            android:name=".GaussJordanSolucaoActivity"
+            android:label="Método de Gauss-Jordan" />
+        <activity
+            android:name=".HelpSpline"
+            android:label="@string/titulo_spline" />
+        <activity
+            android:name=".NewtonNaoLinearActivity"
+            android:label="@string/titulo_newton_metodo" />
+        <activity
+            android:name=".NewtonSolucaoActivity"
+            android:label="@string/titulo_newton_metodo" />
+        <activity
+            android:name=".QuadGaussActivity"
+            android:label="Quadratura de Gauss-Legendre"/>
     </application>
 
 </manifest>
