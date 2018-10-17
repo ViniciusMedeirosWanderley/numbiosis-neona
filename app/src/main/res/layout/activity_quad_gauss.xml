@@ -72,14 +72,16 @@
 
     <Button
         android:id="@+id/btn_QG_calcular"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="117dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="8dp"
         android:text="Calcular"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mathView_QG" />
 
     <TextView
         android:id="@+id/textView16"
@@ -107,7 +109,7 @@
         app:layout_constraintStart_toEndOf="@+id/txt_QG_N"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/txt_QG_viewSolucao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,9 +121,9 @@
         android:textStyle="bold"
         android:textSize="@dimen/funcao_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_QG_N" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_QG_N" />-->
 
-    <TextView
+    <!--<TextView
         android:id="@+id/txt_QG_Solucao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,6 +134,20 @@
         android:textSize="18sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@+id/txt_QG_viewSolucao"
-        app:layout_constraintTop_toBottomOf="@+id/txt_QG_viewSolucao" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_QG_viewSolucao" />-->
+
+    <katex.hourglass.in.mathlib.MathView
+        android:id="@+id/mathView_QG"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_QG_Intervalo"
+        app:setText="$$\\Large\\int_a^bf(x)dx$$" />
 
 </android.support.constraint.ConstraintLayout>

@@ -67,14 +67,22 @@ public class QuadGaussActivity extends AppCompatActivity implements View.OnClick
                     QuadraturaGaussiana QG = new QuadraturaGaussiana(funcao, n, a, b);
                     double quadratura = QG.calcular();
 
-                    exibirSolucao(quadratura);
-                    //Toast.makeText(getApplicationContext(), "Quadratura = " + quadratura, Toast.LENGTH_LONG).show();
+                    //exibirSolucao(quadratura);
+
+                    // chamo a tela de solucao
+                    Intent it = new Intent(this, QuadGaussSolucaoActivity.class);
+                    it.putExtra("A", a);
+                    it.putExtra("B", b);
+                    it.putExtra("solucao", quadratura);
+                    it.putExtra("funcao",funcao);
+                    startActivity(it);
 
                 }catch (IllegalArgumentException e){
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                 }catch(Exception e){
                     Toast.makeText(getApplicationContext(), "Ocorreu um erro." +
                                     "\nConfirme os valores escritos.", Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
                 }
                 break;
 

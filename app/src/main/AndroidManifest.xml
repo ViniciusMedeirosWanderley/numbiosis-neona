@@ -69,7 +69,8 @@
             android:label="@string/titulo_newton_metodo" />
         <activity
             android:name=".QuadGaussActivity"
-            android:label="Quadratura de Gauss-Legendre"/>
+            android:label="Quadratura de Gauss-Legendre" />
+        <activity android:name=".QuadGaussSolucaoActivity"></activity>
     </application>
 
 </manifest>
