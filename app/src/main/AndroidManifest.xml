@@ -70,7 +70,9 @@
         <activity
             android:name=".QuadGaussActivity"
             android:label="Quadratura de Gauss-Legendre" />
-        <activity android:name=".QuadGaussSolucaoActivity"></activity>
+        <activity
+            android:name=".QuadGaussSolucaoActivity"
+            android:label="Quadratura de Gauss-Legendre"/>
     </application>
 
 </manifest>
