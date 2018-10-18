@@ -157,23 +157,30 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
     private void putExtraTodos(Intent it, NewtonNaoLinear nt){
         double eps1 = nt.getEPSILON_1();
         double eps2 = nt.getEPSILON_2();
-        double[] fx = nt.getFx();
-        double[][] jx = nt.getJx();
-        //double[] raizes = nt.getX0();
 
         it.putExtra("eps1",eps1);
         it.putExtra("eps2",eps2);
-        it.putExtra("fx",fx);
-        it.putExtra("jx",jx);
 
         String[] funcoes = nt.getFuncoes();
-        String[] gradientes = nt.getGradientes();
-        String[][] jacobianos = nt.getJ();
         String[][] variaveis = nt.getVariaveis();
 
         it.putExtra("funcoes",funcoes);
-        it.putExtra("gradientes",gradientes);
-        it.putExtra("jacobianos", jacobianos);
         it.putExtra("variaveis", variaveis);
+
+        double[] k_normaFx = nt.getK_normaFx();
+        double[][] k_fx = nt.getK_Fx();
+        double[][][] k_jx = nt.getK_Jx();
+        double[] k_norma = nt.getK_norma();
+        double[][] k_s = nt.getK_s();
+        double[][] k_xk = nt.getK_xk();
+        int k = nt.getnIteracoes();
+
+        it.putExtra("fx",k_fx);
+        it.putExtra("jx",k_jx);
+        it.putExtra("normasFx",k_normaFx);
+        it.putExtra("normas",k_norma);
+        it.putExtra("sk",k_s);
+        it.putExtra("xk",k_xk);
+        it.putExtra("k",k);
     }
 }

@@ -31,6 +31,14 @@ public class NewtonNaoLinear {
     private double[] x0;
     private String[] funcoes;
 
+    private double[][] k_Fx;
+    private double[][][] k_Jx;
+    private double[] k_normaFx;
+    private double[] k_norma;
+    private double[][] k_xk;
+    private double[][] k_s;
+    private int nIteracoes;
+
     /**
      *
      * @param funcoes array com todas as funcoes do sistema.
@@ -50,6 +58,14 @@ public class NewtonNaoLinear {
         this.J = new String[funcoes.length][x0.length];
         this.Jx = new double[funcoes.length][x0.length];
         this.Fx = new double[x0.length];
+
+        // Passo a Passo
+        k_Fx = new double[100][x0.length];
+        k_Jx = new double[100][funcoes.length][x0.length];
+        k_normaFx = new double[100];
+        k_norma = new double[100];
+        k_xk = new double[100][x0.length];
+        k_s = new double[100][x0.length];
     }
 
     /**
@@ -60,6 +76,8 @@ public class NewtonNaoLinear {
         initGrads();
 
         for(int k = 0; k < 100; k++){
+            nIteracoes = k + 1;
+
             System.out.println("\nIteracao ["+(k+1)+"]");
 
             Expression f = new Expression();
@@ -81,12 +99,14 @@ public class NewtonNaoLinear {
                         break;
                 }
             }
-            //*/
 
             System.out.println("\nFx:");
             for (int i = 0; i < funcoes.length; i++) {
                 f.setExpressionString(funcoes[i]);
                 Fx[i] = f.calculate();
+
+                k_Fx[k][i] = Fx[i]; // Passo a Passo
+
                 System.out.println(Fx[i]);
                 Fx[i] = -Fx[i];
             }
@@ -103,6 +123,8 @@ public class NewtonNaoLinear {
                     f.setExpressionString(J[i][j]);
                     Jx[i][j] = f.calculate();
                     System.out.print(Jx[i][j]+"  ");
+
+                    k_Jx[k][i][j] = Jx[i][j]; // Passo a Passo
                 }
                 System.out.println();
             }
@@ -113,6 +135,8 @@ public class NewtonNaoLinear {
             System.out.println("\nNorma Fx: "+ norma);
             if(norma < EPSILON_1)
                 return x0; // eh a raiz
+
+            k_normaFx[k] = norma; // Passo a Passo
 
 
             // passo 3
@@ -125,6 +149,8 @@ public class NewtonNaoLinear {
             System.out.println("\ns: ");
             s.print(4, 3);
 
+            k_s[k] = s.getRowPackedCopy(); // Passo a Passo
+
             // passo 4
             // descubro xk
             // xk = x0 + s;
@@ -134,12 +160,16 @@ public class NewtonNaoLinear {
             System.out.println("\nxk: ");
             xk.print(4, 3);
 
+            k_xk[k] = xk.getRowPackedCopy(); // Passo a Passo
+
             // passo 5
             // acho a norma ||xk - x(k-1)||
             norma = norma(xk.getColumnPackedCopy(),x0);
             System.out.println("Norma: "+norma);
             if(norma < EPSILON_2)
                 return xk.getColumnPackedCopy(); // eh a raiz
+
+            k_norma[k] = norma; // Passo a Passo
 
             // passo 6
             // vou para proxima iteracao
@@ -268,6 +298,35 @@ public class NewtonNaoLinear {
 
     public double[] getX0() {
         return x0;
+    }
+
+    // Passo a Passo
+    public double[][] getK_Fx() {
+        return k_Fx;
+    }
+
+    public double[][][] getK_Jx() {
+        return k_Jx;
+    }
+
+    public double[] getK_normaFx() {
+        return k_normaFx;
+    }
+
+    public double[] getK_norma() {
+        return k_norma;
+    }
+
+    public double[][] getK_xk() {
+        return k_xk;
+    }
+
+    public double[][] getK_s() {
+        return k_s;
+    }
+
+    public int getnIteracoes() {
+        return nIteracoes;
     }
 
 }
