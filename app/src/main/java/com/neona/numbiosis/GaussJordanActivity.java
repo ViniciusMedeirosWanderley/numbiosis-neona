@@ -115,9 +115,12 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     //acha a solucao
                     com.neona.numbiosis.pacote2.GaussJordan gj = new com.neona.numbiosis.pacote2.GaussJordan(A, B);
                     gj.resolve();
+                    String passoApasso = gj.passos; // peganso passo a passo do gj
+
 
                     System.out.println("Normaliza");
                     A.print(5, 2);
+                    System.out.println(passoApasso);
                     System.out.println("Soluçao");
                     B.print(5, 2);
 
@@ -141,7 +144,8 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
                 }
             case R.id.btn_help_gauss_jordan:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=C3Tpj2BS46I")));
+                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=C3Tpj2BS46I")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://e-tutoring")));
                 break;
         }
 

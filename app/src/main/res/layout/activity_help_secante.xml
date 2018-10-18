@@ -79,6 +79,25 @@
                 tools:layout_editor_absoluteX="136dp"
                 tools:layout_editor_absoluteY="302dp" />
 
+            <TextView
+                android:id="@+id/txt_help_site"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="12dp"
+                android:text="@string/txt_help_site"
+                tools:layout_editor_absoluteX="136dp"
+                tools:layout_editor_absoluteY="302dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/site"
+                android:layout_marginLeft="140dp"
+                tools:clickable="true" />
+
         </LinearLayout>
     </ScrollView>
 
