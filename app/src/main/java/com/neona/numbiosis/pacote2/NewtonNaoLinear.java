@@ -18,18 +18,18 @@ import org.mariuszgromada.math.mxparser.*;
  */
 public class NewtonNaoLinear {
 
-    String[] funcoes;
-    String[] gradientes;
-    String[][] variaveis;
+    private String[] gradientes;
+    private String[][] variaveis;
 
-    String[][] J; // derivadas
+    private String[][] J; // derivadas
 
-    double[] Fx;
-    double[][] Jx; // matriz jacobiana
+    private double[] Fx;
+    private double[][] Jx; // matriz jacobiana
 
-    double EPSILON_1 = 1e-4;
-    double EPSILON_2 = 1e-4;
-    double[] x0;
+    private double EPSILON_1 = 1e-4;
+    private double EPSILON_2 = 1e-4;
+    private double[] x0;
+    private String[] funcoes;
 
     /**
      *
@@ -232,6 +232,42 @@ public class NewtonNaoLinear {
         }
 
         return maior;
+    }
+
+    public String[] getFuncoes() {
+        return funcoes;
+    }
+
+    public String[] getGradientes() {
+        return gradientes;
+    }
+
+    public String[][] getVariaveis() {
+        return variaveis;
+    }
+
+    public String[][] getJ() {
+        return J;
+    }
+
+    public double[] getFx() {
+        return Fx;
+    }
+
+    public double[][] getJx() {
+        return Jx;
+    }
+
+    public double getEPSILON_1() {
+        return EPSILON_1;
+    }
+
+    public double getEPSILON_2() {
+        return EPSILON_2;
+    }
+
+    public double[] getX0() {
+        return x0;
     }
 
 }

@@ -16,6 +16,7 @@ public class GaussJordan {
     double[][] b;
     int N_LINHAS; // qtd de linhas
     int N_COLUNAS; // qtd de colunas
+    public String passos = "";
 
     public GaussJordan(Matrix A, Matrix B) {
         this.A = A;
@@ -45,6 +46,16 @@ public class GaussJordan {
         System.out.println("Matriz A:");
         A.print(6, 2);
 
+        for(int i =0 ; i<N_LINHAS; i++){
+            for (int j=0 ; j<N_COLUNAS ; j++){
+               passos += a[i][j];
+               passos += " ";
+            }
+            passos += "\n";
+        }
+
+        passos += "\n\n";
+
         //linha
         for (int i = 0; i < m; i++) {
 
@@ -53,6 +64,17 @@ public class GaussJordan {
             pivo(i,i);
             System.out.println("Iteracao "+(i+1));
             A.print(6, 2);
+
+            for(int k =0 ; k<N_LINHAS; k++){
+                for (int j=0 ; j<N_COLUNAS ; j++){
+                    passos += a[k][j];
+                    passos += " ";
+                }
+                passos += "\n";
+            }
+
+            passos += "\n\n";
+
         }
 
         // normalizo com o pivo
@@ -60,6 +82,16 @@ public class GaussJordan {
             b[i][0] /= a[i][i];
             a[i][i] = 1.0; // divisao por ele mesmo
         }
+
+        for(int k =0 ; k<N_LINHAS; k++){
+            for (int j=0 ; j<N_COLUNAS ; j++){
+                passos += a[k][j];
+                passos += " ";
+            }
+            passos += "\n";
+        }
+
+        passos += "\n\n";
 
     }
 
