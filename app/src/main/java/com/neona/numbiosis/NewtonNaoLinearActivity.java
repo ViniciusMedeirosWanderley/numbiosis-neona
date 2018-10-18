@@ -114,6 +114,9 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
                 Intent it = new Intent(this, NewtonSolucaoActivity.class);
                 it.putExtra("solucao", raiz);
                 it.putExtra("sistema", txtSistema);
+
+                putExtraTodos(it, nt);
+
                 startActivity(it);
                 break;
             case R.id.btn_help_newton:
@@ -149,5 +152,28 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
 
             variaveis[i] = Arrays.copyOfRange(vars, 0, index);
         }
+    }
+
+    private void putExtraTodos(Intent it, NewtonNaoLinear nt){
+        double eps1 = nt.getEPSILON_1();
+        double eps2 = nt.getEPSILON_2();
+        double[] fx = nt.getFx();
+        double[][] jx = nt.getJx();
+        //double[] raizes = nt.getX0();
+
+        it.putExtra("eps1",eps1);
+        it.putExtra("eps2",eps2);
+        it.putExtra("fx",fx);
+        it.putExtra("jx",jx);
+
+        String[] funcoes = nt.getFuncoes();
+        String[] gradientes = nt.getGradientes();
+        String[][] jacobianos = nt.getJ();
+        String[][] variaveis = nt.getVariaveis();
+
+        it.putExtra("funcoes",funcoes);
+        it.putExtra("gradientes",gradientes);
+        it.putExtra("jacobianos", jacobianos);
+        it.putExtra("variaveis", variaveis);
     }
 }
