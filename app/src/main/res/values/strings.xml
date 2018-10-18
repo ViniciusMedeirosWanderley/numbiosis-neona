@@ -21,6 +21,8 @@
     <string name="txt_maximoIteracoes">Máximo de Iterações</string>
     <string name="txt_N">N</string>
     <string name="txt_erroMinimo">Erro Mínimo</string>
+    <string name="txt_help_site">Para mais informações, visite o site:</string>
+    <string name="site">SITE</string>
 
     <!-- MullerActivity -->
     <string name="titulo_muller">Método de Muller</string>

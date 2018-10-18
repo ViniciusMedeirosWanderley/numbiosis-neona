@@ -141,7 +141,8 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
                 }
             case R.id.btn_help_gauss_jordan:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=C3Tpj2BS46I")));
+                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=C3Tpj2BS46I")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://e-tutoring")));
                 break;
         }
 

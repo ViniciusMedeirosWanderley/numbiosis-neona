@@ -17,7 +17,8 @@ import java.text.NumberFormat;
 
 public class QuadGaussActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String link_video = "https://www.youtube.com";
+    //private String link_video = "https://www.youtube.com";
+    private String link_video = "https://e-tutoring";
     private String default_func = "2*e^(-2*x^2)";
     private int default_N = 0;
     private int default_A = -1;
@@ -90,20 +91,5 @@ public class QuadGaussActivity extends AppCompatActivity implements View.OnClick
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link_video)));
                 break;
         }
-    }
-
-    private void exibirSolucao(double quadratura){
-        NumberFormat nf = DecimalFormat.getInstance();
-        nf.setMaximumFractionDigits(8);
-
-        String txt = String.format("Quadratura = %1$2s", nf.format(quadratura));
-
-        TextView viewSolucao = findViewById(R.id.txt_QG_viewSolucao);
-        TextView solucao = findViewById(R.id.txt_QG_Solucao);
-        solucao.setText(txt);
-        if(solucao.getVisibility() == TextView.INVISIBLE)
-            solucao.setVisibility(TextView.VISIBLE);
-        if(viewSolucao.getVisibility() == TextView.INVISIBLE)
-            viewSolucao.setVisibility(TextView.VISIBLE);
     }
 }
