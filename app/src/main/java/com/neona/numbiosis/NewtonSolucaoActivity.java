@@ -24,42 +24,6 @@ public class NewtonSolucaoActivity extends AppCompatActivity {
 
         ktx = new ConverteKatex();
 
-        Intent it = getIntent();
-        double[] solucao = it.getDoubleArrayExtra("solucao");
-        String sistema = it.getStringExtra("sistema");
-
-        TextView textSistema = findViewById(R.id.textSistema);
-        textSistema.setText(sistema);
-
-        TextView textSolucao = findViewById(R.id.textSolucao);
-        NumberFormat nf = DecimalFormat.getInstance();
-        nf.setMaximumFractionDigits(10);
-        StringBuilder sb = new StringBuilder();
-        int i = 0;
-        for (double x:solucao) {
-            switch (i){
-                case 0:
-                    sb.append("x = ");
-                    break;
-                case 1:
-                    sb.append("y = ");
-                    break;
-                case 2:
-                    sb.append("z = ");
-                    break;
-                case 3:
-                    sb.append("w = ");
-                    break;
-            }
-            if(Math.abs(x) <= EPSILON)
-                x = 0;
-
-            sb.append(String.format("%1$2s", nf.format(x)));
-            sb.append("\n");
-            i++;
-        }
-        textSolucao.setText(sb.toString());
-
         katexSistema();
         katexSolucao();
     }
@@ -115,6 +79,6 @@ public class NewtonSolucaoActivity extends AppCompatActivity {
 
         MathView mv = findViewById(R.id.mv_NL_solucao);
         mv.setDisplayText(sb.toString());
-        mv.getLayoutParams().width = sb.toString().length()*5;
+        mv.getLayoutParams().width = sb.toString().length()*10;
     }
 }
