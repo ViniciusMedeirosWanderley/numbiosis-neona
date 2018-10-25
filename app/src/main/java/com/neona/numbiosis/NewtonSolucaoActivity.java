@@ -42,11 +42,6 @@ public class NewtonSolucaoActivity extends AppCompatActivity {
     }
 
     private void katexSolucao(){
-        //\begin{aligned}
-        //   a&=b+c \\
-        //   d+e&=f
-        //\end{aligned}
-
         Intent it = getIntent();
         double[] solucao = it.getDoubleArrayExtra("solucao");
 
@@ -110,45 +105,44 @@ public class NewtonSolucaoActivity extends AppCompatActivity {
        NumberFormat nf = DecimalFormat.getInstance();
        nf.setMaximumFractionDigits(4);
 
-        double[] k_normaFx = it.getDoubleArrayExtra("normasFx");
-        double[][] k_fx = (double[][]) it.getSerializableExtra("fx");
-        double[][][] k_jx = (double[][][]) it.getSerializableExtra("jx");
-        double[] k_norma = it.getDoubleArrayExtra("normas");
-        double[][] k_s = (double[][]) it.getSerializableExtra("sk");
-        double[][] k_xk = (double[][]) it.getSerializableExtra("xk");
-        int nIteracoes = it.getIntExtra("k", -1);
+       double[] k_normaFx = it.getDoubleArrayExtra("normasFx");
+       double[][] k_fx = (double[][]) it.getSerializableExtra("fx");
+       double[][][] k_jx = (double[][][]) it.getSerializableExtra("jx");
+       double[] k_norma = it.getDoubleArrayExtra("normas");
+       double[][] k_s = (double[][]) it.getSerializableExtra("sk");
+       double[][] k_xk = (double[][]) it.getSerializableExtra("xk");
+       int nIteracoes = it.getIntExtra("k", -1);
 
-        //String katex = "<span style=\"float:left\" class=\"latexEle\">";
-
-        String katex = "$$";
+       String katex = "";// "$$";
+       katex += "<div style=\"width: 5%;\">";
        for (int k = 0; k < nIteracoes; k++) {
-            katex += "$$$$";
-            katex += "k = "+(k+1)+"\\text{:}";
-            katex += "$$$$";
+           //katex += "<div>";
+           katex += "<div \">$";
+           katex += "k = "+(k+1)+"\\text{:}";
+           katex += "$</div>";
 
-
-           //katex += "<span style=\"float:left\" class=\"latexEle\">$$";
+           katex += "<div>$";
            // F(x_k)
-            katex += "F(x_{"+(k+1)+"})=";
-            katex += "\\begin{bmatrix}";
-            for (int i = 0; i < k_fx[k].length; i++) {
-                katex += nf.format(k_fx[k][i]);
-                if(i < k_fx[k].length - 1)
-                    katex += "\\\\";
-            }
-            katex += "\\end{bmatrix}";
-           //katex+= "$$</span>$$";
+           katex += "F(x_{"+(k+1)+"})=";
+           katex += "\\begin{bmatrix}";
+           for (int i = 0; i < k_fx[k].length; i++) {
+               katex += nf.format(k_fx[k][i]);
+               if(i < k_fx[k].length - 1) {
+                   katex += "\\\\";
+               }
+           }
+           katex += "\\end{bmatrix}";
+           katex += "$</div>";
 
-           katex += "$$$$";
-
+           katex += "<div>$";
            //Passo II: se ||F(xk)|| menor que ε1 , x ∗ = xk e pare;
            katex += "\\|F(x_"+(k+1)+")\\|_{\\infty} = "+String.format("%2.4E",k_normaFx[k]);
            katex += (k_normaFx[k]) < eps1 ? "<": ">";
            katex += eps1;
-
-           katex += "$$$$";
+           katex += "$</div>";
 
            // Continuo Passo I
+           katex += "<div>$";
 
            // J(x_k)
            katex += "J(x_{"+(k+1)+"})=";
@@ -163,13 +157,14 @@ public class NewtonSolucaoActivity extends AppCompatActivity {
                    katex += "\\\\";
            }
            katex += "\\end{bmatrix}";
+           katex += "$</div>";
 
-           katex += "$$$$";
-
-
+           katex += "<div>$";
            //Passo III: obter s(k) , solução do sistema J*s(k) = −F
            katex += "J(x_"+(k+1)+")\\cdot S_"+(k+1)+" = -F(x_"+(k+1)+")";
-           katex += "$$$$";
+           katex += "$</div>";
+
+           katex += "<div>$";
            katex += "S_"+(k+1)+"=";
            katex += "\\begin{bmatrix}";
            for (int i = 0; i < k_s[k].length; i++) {
@@ -182,13 +177,11 @@ public class NewtonSolucaoActivity extends AppCompatActivity {
                    katex += "\\\\";
            }
            katex += "\\end{bmatrix}";
+           katex += "$</div>";
 
-           katex += "$$$$";
-
+           katex += "<div>$";
            //Passo IV: atualizar x(k+1) = xk + s(k)
            katex += "x_"+(k+2)+" = x_"+(k+1)+" + S_"+(k+1);
-           //katex += "$$$$";
-           //katex += "x_"+(k+2)+" = ";
            katex += " = ";
            katex += "\\begin{bmatrix}";
            for (int i = 0; i < k_xk[k].length; i++) {
@@ -201,23 +194,26 @@ public class NewtonSolucaoActivity extends AppCompatActivity {
                    katex += "\\\\";
            }
            katex += "\\end{bmatrix}";
+           katex += "$</div>";
 
-           katex += "$$$$";
-
+           katex += "<div>$";
            //Passo V: se ||x(k+1) − xk || menor que ε2, x ∗ = x(k+1) e pare;
            katex += "\\|x_"+(k+2)+" - x_"+(k+1)+"\\|_{\\infty} = "+String.format("%2.4E",k_norma[k]);
            katex += (k_norma[k]) < eps2 ? "<": ">";
            katex += eps2;
-
-           katex += "$$$$";
+           katex += "$</div>";
 
            if(k_norma[k] < eps2){
+               katex += "<div>$";
                katex += "\\bold{x_"+(k+2)+"\\text{ é solução.}}";
+               katex += "$</div><br>";
                break;
            }
+           //katex += "</div>";
+           katex += "<br>";
        }
-        katex += "$$";
-       //katex += "</span>";
+       //katex += "$$";
+       katex += "</div>";
 
        MathView mv = findViewById(R.id.mv_NL_passo1);
        mv.setDisplayText(katex);

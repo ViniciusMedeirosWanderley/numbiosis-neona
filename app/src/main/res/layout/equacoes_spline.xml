@@ -9,54 +9,169 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <katex.hourglass.in.mathlib.MathView
-                android:id="@+id/equacao1"
-                android:layout_width="750dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="25dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textAlignment="gravity"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <katex.hourglass.in.mathlib.MathView
-                android:id="@+id/equacao2"
-                android:layout_width="750dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="25dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textAlignment="gravity"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/equacao1" />
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Equações:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <katex.hourglass.in.mathlib.MathView
-                android:id="@+id/equacao3"
-                android:layout_width="750dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="25dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textAlignment="gravity"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/equacao2" />
-        </LinearLayout>
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/equacao1"
+                    android:layout_width="750dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="25dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="gravity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/equacao2"
+                    android:layout_width="750dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="25dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="gravity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equacao1" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/equacao3"
+                    android:layout_width="750dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="25dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="gravity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equacao2" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="10dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintTop_toBottomOf="@+id/mv_NL_solucao" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Cálculo dos coeficientes:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/formula_spline"
+                    android:layout_width="750dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="gravity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equacao2" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/textoSpline"
+                    android:layout_width="750dp"
+                    android:layout_height="240dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/coeficiente1"
+                    android:layout_width="750dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="2dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="gravity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equacao2" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/coeficiente2"
+                    android:layout_width="750dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="gravity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equacao2" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/coeficiente3"
+                    android:layout_width="750dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="gravity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equacao2" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:id="@+id/coeficiente4"
+                    android:layout_width="750dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="gravity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/equacao2" />
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
     </HorizontalScrollView>
 </android.support.constraint.ConstraintLayout>
