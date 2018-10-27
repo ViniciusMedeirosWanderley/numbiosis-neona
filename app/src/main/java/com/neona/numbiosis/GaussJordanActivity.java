@@ -116,6 +116,7 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     com.neona.numbiosis.pacote2.GaussJordan gj = new com.neona.numbiosis.pacote2.GaussJordan(A, B);
                     gj.resolve();
                     String passoApasso = gj.passos; // peganso passo a passo do gj
+                    int numeroDeIteracoes = gj.numeroDeIterações;
 
 
                     System.out.println("Normaliza");
@@ -135,6 +136,8 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     it.putExtra("solucao",matriz);
                     it.putExtra("A",sistema);
                     it.putExtra("B",vetorB);
+                    it.putExtra("passos",passoApasso);
+                    it.putExtra("iteracoes",numeroDeIteracoes);
                     startActivity(it);
                     break;
 
