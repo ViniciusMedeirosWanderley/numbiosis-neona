@@ -17,6 +17,7 @@ public class GaussJordan {
     int N_LINHAS; // qtd de linhas
     int N_COLUNAS; // qtd de colunas
     public String passos = "";
+    public int numeroDeIterações;
 
     public GaussJordan(Matrix A, Matrix B) {
         this.A = A;
@@ -43,7 +44,8 @@ public class GaussJordan {
         double[][] a = A.getArray();
         double[][] b = B.getArray();
 
-        System.out.println("Matriz A:");
+        System.out.println("Matriz A | Matriz B:");
+        //passos += "Matriz A | Matriz B:" + "\n\n";
         A.print(6, 2);
 
         for(int i =0 ; i<N_LINHAS; i++){
@@ -54,15 +56,25 @@ public class GaussJordan {
             passos += "\n";
         }
 
-        passos += "\n\n";
+        passos += "proximaIteracao";
+
+        for(int i = 0; i<N_LINHAS;i++){
+            passos += b[i][0];
+            passos += "\n";
+        }
+
+        passos += "proximaIteracao";
 
         //linha
-        for (int i = 0; i < m; i++) {
+
+        int i=0;
+        for (i = 0; i < m; i++) {
 
             pivoteamento(i);
 
             pivo(i,i);
             System.out.println("Iteracao "+(i+1));
+            //passos += "Iteracao " + (i+1) + "\n" ;
             A.print(6, 2);
 
             for(int k =0 ; k<N_LINHAS; k++){
@@ -70,18 +82,30 @@ public class GaussJordan {
                     passos += a[k][j];
                     passos += " ";
                 }
+
                 passos += "\n";
             }
 
-            passos += "\n\n";
+            passos += "proximaIteracao";
+
+            for(int l = 0; l<N_LINHAS;l++){
+                passos += b[l][0];
+                passos += "\n";
+            }
+
+            passos += "proximaIteracao";
 
         }
 
+        numeroDeIterações = (i+1+1); //quantidade de iterações + uma operaçao de normalização + uma das matrizes iniciais
+
         // normalizo com o pivo
-        for (int i = 0; i < N_LINHAS; i++) {
+        for (i = 0; i < N_LINHAS; i++) {
             b[i][0] /= a[i][i];
             a[i][i] = 1.0; // divisao por ele mesmo
         }
+
+        //passos += "Normaliza" + "\n\n";
 
         for(int k =0 ; k<N_LINHAS; k++){
             for (int j=0 ; j<N_COLUNAS ; j++){
@@ -91,7 +115,14 @@ public class GaussJordan {
             passos += "\n";
         }
 
-        passos += "\n\n";
+        passos += "proximaIteracao";
+
+        for(int l = 0; l<N_LINHAS;l++){
+            passos += b[l][0];
+            passos += "\n";
+        }
+
+        passos += "proximaIteracao";
 
     }
 
