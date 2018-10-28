@@ -60,7 +60,8 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                         txt_dimensoesA = "3x3";
 
                     //futuramente podemos melhorar essa recepcao das dimensoes de A
-                    dimensoesA = txt_dimensoesA.split("x");
+                    dimensoesA = txt_dimensoesA.split("x"); //PRECISA GENERALIZAR
+                    // PRA QUANDO FOR QUALQUER OUTRA LETRA ELE CAPTURAR SOMENTE OS NUMEROS DOS EXTREMOS
 
                     int linhaA = Integer.parseInt(dimensoesA[0].trim());
                     int colunaA = Integer.parseInt(dimensoesA[1].trim());
@@ -138,6 +139,10 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     it.putExtra("B",vetorB);
                     it.putExtra("passos",passoApasso);
                     it.putExtra("iteracoes",numeroDeIteracoes);
+                    it.putExtra("linhasA",linhaA );
+                    it.putExtra("colunasA",colunaA);
+                    it.putExtra("linhasB",linhasB.length);
+
                     startActivity(it);
                     break;
 
