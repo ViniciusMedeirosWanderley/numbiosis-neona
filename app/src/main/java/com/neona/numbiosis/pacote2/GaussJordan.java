@@ -16,7 +16,13 @@ public class GaussJordan {
     double[][] b;
     int N_LINHAS; // qtd de linhas
     int N_COLUNAS; // qtd de colunas
-    public String passos = "";
+
+    double [][][] kA;
+    double [][][] kB;
+    double [][] normalB;
+    boolean [] pivotea;
+    int [][] trocas;
+    private int k;
 
     public GaussJordan(Matrix A, Matrix B) {
         this.A = A;
@@ -30,10 +36,16 @@ public class GaussJordan {
 
         this.a = A.getArray();
         this.b = B.getArray();
+
+        this.kA = new double[N_LINHAS][a.length][a[0].length];
+        this.kB = new double[N_LINHAS][b.length][b[0].length];
+        this.normalB = new double[b.length][b[0].length];
+        this.trocas = new int[N_LINHAS][2];
+        this.pivotea = new boolean[N_LINHAS];
     }
 
-    // Sem pivoteamento, pode ocorrer divisao por zero
-    public void resolve(){ //resolveComPivoteamento();return;
+    // Com pivoteamento
+    public void resolve(){
         int m = A.getRowDimension();
         int n = A.getColumnDimension();
 
@@ -46,52 +58,41 @@ public class GaussJordan {
         System.out.println("Matriz A:");
         A.print(6, 2);
 
-        for(int i =0 ; i<N_LINHAS; i++){
-            for (int j=0 ; j<N_COLUNAS ; j++){
-               passos += a[i][j];
-               passos += " ";
-            }
-            passos += "\n";
-        }
-
-        passos += "\n\n";
+        k = 0;
 
         //linha
         for (int i = 0; i < m; i++) {
 
-            pivoteamento(i);
+            pivotea[i] = pivoteamento(i);
 
             pivo(i,i);
             System.out.println("Iteracao "+(i+1));
             A.print(6, 2);
 
-            for(int k =0 ; k<N_LINHAS; k++){
-                for (int j=0 ; j<N_COLUNAS ; j++){
-                    passos += a[k][j];
-                    passos += " ";
+            // salvo matriz A e B na iteracao
+            for (int linha = 0; linha < a.length; linha++) {
+                for (int coluna = 0; coluna < a[0].length; coluna++) {
+                    kA[i][linha][coluna] = a[linha][coluna];
                 }
-                passos += "\n";
+
+                for (int colunaB = 0; colunaB < b[0].length; colunaB++) {
+                    kB[i][linha][colunaB] = b[linha][colunaB];
+                }
             }
 
-            passos += "\n\n";
-
+            k++;
         }
 
         // normalizo com o pivo
         for (int i = 0; i < N_LINHAS; i++) {
             b[i][0] /= a[i][i];
             a[i][i] = 1.0; // divisao por ele mesmo
+
+            // salvo Matriz B normalizada
+            normalB[i][0] = b[i][0];
         }
 
-        for(int k =0 ; k<N_LINHAS; k++){
-            for (int j=0 ; j<N_COLUNAS ; j++){
-                passos += a[k][j];
-                passos += " ";
-            }
-            passos += "\n";
-        }
 
-        passos += "\n\n";
 
     }
 
@@ -117,7 +118,7 @@ public class GaussJordan {
     }
 
 
-    private void pivoteamento(int linha){
+    private boolean pivoteamento(int linha){
         int i = linha;
         // acho o maior para fazer pivoteamento
         int maior = i;
@@ -125,8 +126,12 @@ public class GaussJordan {
             if(Math.abs(a[i][i]) < Math.abs(a[i][j]))
                 maior = j;
         }
-        if(i != maior)
-            troca(i,maior);
+        if(i != maior) {
+            troca(i, maior);
+            trocas[k] = new int[]{i,maior};
+            return true;
+        }
+        return false;
     }
 
     // troca linhas (A e B)
@@ -140,5 +145,17 @@ public class GaussJordan {
         b[linha2] = temp;
     }
 
+
+    public double[][][] getAIteracoes(){
+        return kA;
+    }
+
+    public double[][][] getBIteracoes(){
+        return kB;
+    }
+
+    public double[][] getBFinal(){
+        return normalB;
+    }
 }
 

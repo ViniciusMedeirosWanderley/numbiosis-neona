@@ -27,6 +27,8 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
     double matrizA[][];
     double matrizB[];
 
+    String link = "https://http://numbiosis.ci.ufpb.br/e-tutoring";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,15 +114,14 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     Matrix A = new Matrix(matrizA);
                     Matrix B = new Matrix(matrizB,linhaA);
 
+                    matrizA = A.getArrayCopy();
+
                     //acha a solucao
                     com.neona.numbiosis.pacote2.GaussJordan gj = new com.neona.numbiosis.pacote2.GaussJordan(A, B);
                     gj.resolve();
-                    String passoApasso = gj.passos; // peganso passo a passo do gj
-
 
                     System.out.println("Normaliza");
                     A.print(5, 2);
-                    System.out.println(passoApasso);
                     System.out.println("Soluçao");
                     B.print(5, 2);
 
@@ -133,8 +134,18 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                     //tela de solucao
                     Intent it = new Intent(this, GaussJordanSolucaoActivity.class);
                     it.putExtra("solucao",matriz);
-                    it.putExtra("A",sistema);
-                    it.putExtra("B",vetorB);
+                    /*it.putExtra("A",sistema);
+                    it.putExtra("B",vetorB);*/
+
+                    double[][] bfinal = gj.getBFinal();
+                    double[][][] aIteracoes = gj.getAIteracoes();
+                    double[][][] bIteracoes = gj.getBIteracoes();
+                    it.putExtra("Bfinal",bfinal);
+                    it.putExtra("Biter",bIteracoes);
+                    it.putExtra("Aiter",aIteracoes);
+                    it.putExtra("A", matrizA);
+                    it.putExtra("B", matrizB);
+
                     startActivity(it);
                     break;
 
@@ -143,9 +154,9 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),"Confirme os valores escritos.", Toast.LENGTH_LONG).show();
                 }
+                break;
             case R.id.btn_help_gauss_jordan:
-                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=C3Tpj2BS46I")));
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://e-tutoring")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));
                 break;
         }
 
