@@ -77,7 +77,7 @@
                               visando contribuir com o projeto <b>Numbiosis</b>, desenvolvido pelo Prof. Gustavo Oliveira.
                                 \n\nPara mais informações sobre o projeto, acesse o link:</string>
 
-    <string name="textSobre2">Link para o simulador interativo do aluno <b>Vinícius Matheus</b> (aluno de Engenharia da Computação da UFPB)</string>
+    <string name="textSobre2">Link para a versão web do projeto desenvolvido pelos outros grupos da turma do Prof. Gustavo.</string>
 
     <!-- Help -->
     <string name="titulo_help_secante">Método das Secantes</string>

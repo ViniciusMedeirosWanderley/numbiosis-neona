@@ -12,7 +12,7 @@ import android.widget.Button;
 public class SobreActivity extends AppCompatActivity implements View.OnClickListener  {
 
     private String link_numbiosis = "http://numbiosis.ci.ufpb.br";
-    private String link_numis = "https://vnicius.github.io/numbiosis/";
+    private String link_numis = "http://appmmc.ci.ufpb.br";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
