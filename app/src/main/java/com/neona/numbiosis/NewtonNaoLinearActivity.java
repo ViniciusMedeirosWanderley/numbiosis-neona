@@ -121,7 +121,7 @@ public class NewtonNaoLinearActivity extends AppCompatActivity  implements View.
                 break;
             case R.id.btn_help_newton:
                 //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=jO-P1RgFziU")));
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://e-tutoring")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://numbiosis.ci.ufpb.br/e-tutoring")));
                 break;
         }
     }

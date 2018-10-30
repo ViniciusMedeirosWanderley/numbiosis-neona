@@ -18,7 +18,7 @@ import java.text.NumberFormat;
 public class QuadGaussActivity extends AppCompatActivity implements View.OnClickListener {
 
     //private String link_video = "https://www.youtube.com";
-    private String link_video = "https://e-tutoring";
+    private String link_video = "http://numbiosis.ci.ufpb.br/e-tutoring";
     private String default_func = "2*e^(-2*x^2)";
     private int default_N = 0;
     private int default_A = -1;

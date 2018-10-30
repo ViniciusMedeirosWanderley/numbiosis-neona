@@ -23,7 +23,7 @@ public class HelpFalsaPosicao extends AppCompatActivity implements View.OnClickL
 
         switch (view.getId()) {
             case R.id.button:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://e-tutoring")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://numbiosis.ci.ufpb.br/e-tutoring")));
                 break;
         }
     }

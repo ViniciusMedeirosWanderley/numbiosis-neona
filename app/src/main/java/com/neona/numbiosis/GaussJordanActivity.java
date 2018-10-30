@@ -27,7 +27,7 @@ public class GaussJordanActivity extends AppCompatActivity implements  View.OnCl
     double matrizA[][];
     double matrizB[];
 
-    String link = "https://http://numbiosis.ci.ufpb.br/e-tutoring";
+    String link = "http://numbiosis.ci.ufpb.br/e-tutoring";
 
 
     @Override

@@ -23,7 +23,7 @@ public class HelpSecante extends AppCompatActivity implements View.OnClickListen
 
         switch (view.getId()) {
             case R.id.button:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://e-tutoring")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://numbiosis.ci.ufpb.br/e-tutoring")));
                 break;
         }
     }
